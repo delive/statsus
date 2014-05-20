@@ -1,17 +1,40 @@
 package com.statsus.core;
 
-import android.support.v7.app.ActionBarActivity;
+import java.util.Date;
+
+import com.statsus.core.metadata.Stat;
+import com.statsus.core.persistence.LocalPersistenceManager;
+
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
-public class Home extends ActionBarActivity {
+public class Home extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+    }
+
+    public void submitStats(View v) {
+        //TODO make this real test data, right now just setting up the framework for local persistence
+        final int value1 = Integer.valueOf(((EditText) findViewById(R.id.value1)).getText().toString());
+        final int value2 = Integer.valueOf(((EditText) findViewById(R.id.value2)).getText().toString());
+
+        final Stat stat1 = Stat.getStatFromId(1);
+        final Stat stat2 = Stat.getStatFromId(2);
+
+        final Date date = new Date();
+
+        final int uid = 1;
+
+        LocalPersistenceManager.addStat(stat1, value1, uid, date, getApplicationContext());
+        LocalPersistenceManager.addStat(stat2, value2, uid, date, getApplicationContext());
     }
 
 
