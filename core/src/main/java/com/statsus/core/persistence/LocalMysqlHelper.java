@@ -26,8 +26,7 @@ class LocalMysqlHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(final SQLiteDatabase db, final int oldVersion, final int newVersion) {
-//        TODO
-//        sqLiteDatabase.execSQL(StatContentSql.SQL_DELETE_STATS_TABLE);
-//        onCreate(StatContentSql.SQL_CREATE_STATS_TABLE);
+        db.execSQL(StatContentSql.SQL_DELETE_STATS_TABLE);
+        onCreate(db);
     }
 }

@@ -3,14 +3,15 @@ package com.statsus.core;
 import java.util.Date;
 
 import com.statsus.core.metadata.Stat;
+import com.statsus.core.mystats.MyStats;
 import com.statsus.core.persistence.LocalPersistenceManager;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 
 
 public class Home extends Activity {
@@ -21,10 +22,14 @@ public class Home extends Activity {
         setContentView(R.layout.activity_home);
     }
 
+    public void myStats(View v) {
+        startActivity(new Intent(this, MyStats.class));
+    }
+
     public void submitStats(View v) {
         //TODO make this real test data, right now just setting up the framework for local persistence
-        final int value1 = Integer.valueOf(((EditText) findViewById(R.id.value1)).getText().toString());
-        final int value2 = Integer.valueOf(((EditText) findViewById(R.id.value2)).getText().toString());
+//        final int value1 = Integer.valueOf(((EditText) findViewById(R.id.value1)).getText().toString());
+//        final int value2 = Integer.valueOf(((EditText) findViewById(R.id.value2)).getText().toString());
 
         final Stat stat1 = Stat.getStatFromId(1);
         final Stat stat2 = Stat.getStatFromId(2);
@@ -33,8 +38,8 @@ public class Home extends Activity {
 
         final int uid = 1;
 
-        LocalPersistenceManager.addStat(stat1, value1, uid, date, getApplicationContext());
-        LocalPersistenceManager.addStat(stat2, value2, uid, date, getApplicationContext());
+        LocalPersistenceManager.addStat(stat1, 3, uid, date, getApplicationContext());
+        LocalPersistenceManager.addStat(stat2, 5, uid, date, getApplicationContext());
     }
 
 

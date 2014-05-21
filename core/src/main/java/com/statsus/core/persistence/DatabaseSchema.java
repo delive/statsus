@@ -3,6 +3,8 @@ package com.statsus.core.persistence;
 import android.provider.BaseColumns;
 
 /**
+ * DB schema for statsus tables including create and delete sql.
+ *
  * @author john.wright
  * @since May 19 2014
  */
@@ -23,10 +25,10 @@ public class DatabaseSchema {
         public static final String SQL_CREATE_STATS_TABLE =
             "CREATE TABLE " + StatContentSql.TABLE_NAME + " (" +
             StatContentSql._ID + " INTEGER PRIMARY KEY," +
-            StatContentSql.COLUMN_NAME_STAT_ID + " INTEGER PRIMARY KEY," +
-            StatContentSql.COLUMN_NAME_USER_ID + " INTEGER PRIMARY KEY," +
-            StatContentSql.COLUMN_NAME_DATE + " DATE PRIMARY KEY," +
-            StatContentSql.COLUMN_NAME_VAL + "INTEGER" +
+            StatContentSql.COLUMN_NAME_STAT_ID + " INTEGER," +
+            StatContentSql.COLUMN_NAME_USER_ID + " INTEGER," +
+            StatContentSql.COLUMN_NAME_DATE + " DATE," +
+            StatContentSql.COLUMN_NAME_VAL + " INTEGER" +
             " )";
 
         public static final String SQL_DELETE_STATS_TABLE =
