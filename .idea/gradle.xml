@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="C:\Users\stefan\Documents\GitHub\statsus" />
-            <option value="C:\Users\stefan\Documents\GitHub\statsus\core" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/core" />
           </set>
         </option>
       </GradleProjectSettings>

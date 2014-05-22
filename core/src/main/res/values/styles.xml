@@ -31,4 +31,10 @@
         <item name="android:layout_width">50dp</item>
     </style>
 
+    <style name="ibt_red" parent="android:Widget">
+        <item name="android:background">@drawable/bt_red</item>
+        <item name="android:textColor">#ff0000</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
 </resources>
