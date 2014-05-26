@@ -19,7 +19,7 @@ public class Home extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.home_1_first_login);
     }
 
     public void myStats(View v) {
