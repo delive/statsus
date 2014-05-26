@@ -9,7 +9,7 @@ package com.statsus.core.metadata;
 public enum Stat {
     Happy(1),
     VideoGames(2),
-    Restaraunt(3),
+    Restaurant(3),
     Drinking(4),
     Movies(5),
     Cards(6);

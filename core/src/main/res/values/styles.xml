@@ -9,20 +9,24 @@
     <style name="gray_button" parent="android:Widget">
         <item name="android:background">@drawable/gray_button</item>
         <item name="android:textColor">#2d9dfb</item>
-        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
     </style>
 
     <style name="settings_button" parent="android:Widget">
         <item name="android:background">@drawable/settings_button</item>
         <item name="android:textColor">#2d9dfb</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_width">35dp</item>
     </style>
 
     <style name="blue_button" parent="android:Widget">
         <item name="android:background">@drawable/blue_button</item>
         <item name="android:textColor">#FFF</item>
         <item name="android:layout_height">35dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
     </style>
 
     <style name="white_button" parent="android:Widget">
@@ -30,6 +34,27 @@
         <item name="android:textColor">#2d9dfb</item>
         <item name="android:layout_height">35dp</item>
         <item name="android:layout_width">35dp</item>
+    </style>
+
+    <style name="uicon_container" parent="android:Widget">
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@drawable/icon_bg</item>
+    </style>
+
+    <style name="uicon_text" parent="android:Widget">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginLeft">-2dp</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:background">@drawable/icon_txt</item>
     </style>
 
 </resources>
