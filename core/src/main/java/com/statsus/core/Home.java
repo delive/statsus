@@ -12,6 +12,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 
 public class Home extends Activity {
@@ -20,6 +23,32 @@ public class Home extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_1_first_login);
+        initStatCategories();
+    }
+
+    /**
+     * Builds the 2 column multi rowed stat category layout from stats selected by the user
+     */
+    private void initStatCategories() {
+        final LinearLayout statContainer = (LinearLayout) findViewById(R.id.stat_category_container);
+
+        int colCount = 0;
+        // init the first row
+        LinearLayout row = (LinearLayout) getLayoutInflater().inflate(R.layout.home_stat_row, statContainer, false);
+        statContainer.addView(row);
+        for (final Stat stat : Stat.values()) {
+            if (colCount == 2) {
+                row = (LinearLayout) getLayoutInflater().inflate(R.layout.home_stat_row, statContainer, false);
+                statContainer.addView(row);
+                colCount = 0;
+            }
+            final LinearLayout col =
+                    (LinearLayout) getLayoutInflater().inflate(R.layout.home_stat_column, statContainer, false);
+            stat.setStatImageProperties((ImageButton) col.findViewById(R.id.stat_button_image));
+            stat.setTextProperties((Button) col.findViewById(R.id.stat_button));
+            row.addView(col);
+            colCount++;
+        }
     }
 
     public void myStats(View v) {
