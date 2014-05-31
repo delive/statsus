@@ -369,13 +369,22 @@
             </LinearLayout>
             <!-- 1 row of 2 buttons with text and icon ends -->
 
-
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_marginTop = "15dp"
+                android:layout_height="1dp"
+                android:background="#20FFFFFF"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:id="@+id/linearLayout">
+            </LinearLayout>
 
             <!-- 1 row of 2 buttons with text and icon starts -->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_marginTop = "10dp"
+                android:layout_marginTop = "15dp"
                 android:layout_height="wrap_content"
                 android:background="#0d0d0d"
                 android:id="@+id/linearLayout">
