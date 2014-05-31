@@ -2,13 +2,14 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
+    android:background="#151515"
     android:layout_height="fill_parent">
 
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="10dp"
@@ -52,7 +53,7 @@
             android:layout_below="@+id/imageButton"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/linearLayout">
+            android:id="@+id/my_navigation">
 
 
             <Button
@@ -85,46 +86,49 @@
 
         </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="200dp"
-            android:layout_below="@+id/linearLayout"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/my_navigation"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:src="@drawable/submit_items_bg"
-            android:id="@+id/relativeLayout">
+            android:id="@+id/search_function">
 
+        <EditText
+            android:layout_width="fill_parent"
+            android:id="@+id/editText2"
+            android:layout_below="@+id/linearLayout"
+            android:layout_marginLeft = "4dip"
+            android:layout_marginRight = "4dip"
+            android:text="Search here for the items you'd like to add"
+            android:paddingLeft="15dp"
+            android:layout_height="50dp"
+            style="@style/gray_button"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:id="@+id/imageView2"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/submit_items_bg" />
-
-
-        </RelativeLayout>
-
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_below="@+id/relativeLayout"
+            android:layout_below="@+id/search_function"
+            android:paddingBottom="15dp"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
             android:background="#0d0d0d"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:id="@+id/linearLayout2">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add more from the items bellow:"
+                android:text="You can also find items in the categories bellow:"
                 android:id="@+id/textView3"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
@@ -132,6 +136,8 @@
                 android:textColor="#2d9dfb"
                 android:textSize="22sp" />
 
+
+
             <!-- 1 row of 2 buttons with text and icon starts -->
             <LinearLayout
                 android:orientation="horizontal"
@@ -146,22 +152,18 @@
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
                     android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:src="@drawable/uicons_smiley"
-                        style="@style/uicon_container" />
-
                     <Button
-                        style="@style/uicon_text"
-                        android:text="Happy"
-                        android:textColor="#c82d2f"
-                        android:id="@+id/button" />
-
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Social"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -169,21 +171,18 @@
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
                     android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:src="@drawable/uicons_smiley"
-                        style="@style/uicon_container" />
-
                     <Button
-                        style="@style/uicon_text"
-                        android:text="Happy"
-                        android:textColor="#c82d2f"
-                        android:id="@+id/button" />
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Love"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -203,22 +202,18 @@
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
                     android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:src="@drawable/uicons_smiley"
-                        style="@style/uicon_container" />
-
                     <Button
-                        style="@style/uicon_text"
-                        android:text="Happy"
-                        android:textColor="#c82d2f"
-                        android:id="@+id/button" />
-
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Sports"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -226,21 +221,18 @@
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
                     android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:src="@drawable/uicons_smiley"
-                        style="@style/uicon_container" />
-
                     <Button
-                        style="@style/uicon_text"
-                        android:text="Happy"
-                        android:textColor="#c82d2f"
-                        android:id="@+id/button" />
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Health"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -260,22 +252,18 @@
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
                     android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:src="@drawable/uicons_smiley"
-                        style="@style/uicon_container" />
-
                     <Button
-                        style="@style/uicon_text"
-                        android:text="Happy"
-                        android:textColor="#c82d2f"
-                        android:id="@+id/button" />
-
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Entertainment"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -283,19 +271,117 @@
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
                     android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
-
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Food"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
 
                 </LinearLayout>
             </LinearLayout>
             <!-- 1 row of 2 buttons with text and icon ends -->
+
+            <!-- 1 row of 2 buttons with text and icon starts -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_marginTop = "10dp"
+                android:layout_height="wrap_content"
+                android:background="#0d0d0d"
+                android:id="@+id/linearLayout">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="#0d0d0d"
+                    android:id="@+id/linearLayout">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Music"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="#0d0d0d"
+                    android:id="@+id/linearLayout">
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 1 row of 2 buttons with text and icon ends -->
+
+
+            <!-- 1 row of 2 buttons with text and icon starts -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_marginTop = "10dp"
+                android:layout_height="wrap_content"
+                android:background="#0d0d0d"
+                android:id="@+id/linearLayout">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="#0d0d0d"
+                    android:id="@+id/linearLayout">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Add New"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/blue_button" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="#0d0d0d"
+                    android:id="@+id/linearLayout">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="My Items"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/blue_button" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 1 row of 2 buttons with text and icon ends -->
+
+
 
         </LinearLayout>
-
 
     </RelativeLayout>
 
