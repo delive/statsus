@@ -57,4 +57,35 @@
         <item name="android:background">@drawable/icon_txt</item>
     </style>
 
+    <style name="uicon_whitebg_text" parent="android:Widget">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginLeft">-2dp</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:background">@drawable/icon_txt_whitebg</item>
+    </style>
+
+    <style name="uicon_values_1_to_4" parent="android:Widget">
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@drawable/values_1_to_4_bg</item>
+    </style>
+
+    <style name="uicon_value_5" parent="android:Widget">
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@drawable/value_5_bg</item>
+    </style>
+
 </resources>
