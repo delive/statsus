@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="#151515"
+    android:layout_height="fill_parent">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="10dp"
+        android:background="#151515"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.example.statsusv1.statsusv1.Statsus">
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:adjustViewBounds="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginTop = "6dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/logo_statsus" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop = "2dip"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/icon_settings"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            style="@style/settings_button" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_marginTop = "10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_height="wrap_content"
+            android:background="#0d0d0d"
+            android:layout_below="@+id/imageButton"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/my_navigation">
+
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="My Day"
+                android:onClick="submitStats"
+                android:id="@+id/button"
+                android:layout_marginLeft = "8dip"
+                style="@style/blue_button" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="Stats"
+                android:id="@+id/button"
+                android:onClick="myStats"
+                android:layout_marginLeft = "8dip"
+                android:layout_marginRight = "8dip"
+                style="@style/gray_button" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="Friends"
+                android:id="@+id/button"
+                android:layout_marginRight = "8dip"
+                style="@style/gray_button" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add your own item:"
+            android:id="@+id/textView3"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop = "10dip"
+            android:textColor="#2d9dfb"
+            android:layout_below="@+id/my_navigation"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/textView3"
+            android:background="#0d0d0d"
+            android:id="@+id/iconpreview">
+
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:src="@drawable/uicons_smiley"
+                style="@style/uicon_container" />
+
+            <Button
+                style="@style/uicon_text"
+                android:text="Item Preview"
+                android:textColor="#c82d2f"
+                android:id="@+id/button" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/iconpreview"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/search_function">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:id="@+id/editText2"
+                android:layout_below="@+id/linearLayout"
+                android:layout_marginLeft = "4dip"
+                android:layout_marginRight = "4dip"
+                android:text="Name of your item"
+                android:paddingLeft="15dp"
+                style="@style/gray_button"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/search_function"
+            android:paddingBottom="15dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:background="#0d0d0d"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/linearLayout2">
+
+            <!-- 1 row of 2 buttons with text and icon starts -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_marginTop = "10dp"
+                android:layout_height="wrap_content"
+                android:background="#0d0d0d"
+                android:id="@+id/linearLayout">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="#0d0d0d"
+                    android:id="@+id/linearLayout">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Pick an Icon"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="#0d0d0d"
+                    android:id="@+id/linearLayout">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Pick a Color"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 1 row of 2 buttons with text and icon ends -->
+
+
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_marginTop = "15dp"
+                android:layout_height="1dp"
+                android:background="#20FFFFFF"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:id="@+id/linearLayout">
+            </LinearLayout>
+
+            <!-- 1 row of 2 buttons with text and icon starts -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_marginTop = "15dp"
+                android:layout_height="wrap_content"
+                android:background="#0d0d0d"
+                android:id="@+id/linearLayout">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="#0d0d0d"
+                    android:id="@+id/linearLayout">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Cancel"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/blue_button" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="#0d0d0d"
+                    android:id="@+id/linearLayout">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Add Item"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/blue_button" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 1 row of 2 buttons with text and icon ends -->
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
