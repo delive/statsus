@@ -545,7 +545,6 @@
                 android:layout_marginTop = "15dp"
                 android:layout_height="wrap_content"
                 android:background="#0d0d0d"
-                android:
                 android:id="@+id/linearLayout">
 
                 <LinearLayout
