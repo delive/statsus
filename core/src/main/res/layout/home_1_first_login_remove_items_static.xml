@@ -174,7 +174,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pick the items you'd like to remove:"
+                android:text="Pick the items you'd like to edit or remove:"
                 android:id="@+id/textView3"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
@@ -382,6 +382,7 @@
                         android:onClick="myStats"
                         style="@style/gray_button" />
 
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -397,12 +398,33 @@
                     <Button
                         android:layout_width="fill_parent"
                         android:layout_weight="1"
-                        android:text="Remove Selected"
+                        android:text="Edit"
                         android:id="@+id/button"
                         android:onClick="myStats"
                         style="@style/blue_button" />
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft = "4dip"
+                    android:layout_marginRight = "4dip"
+                    android:background="#0d0d0d"
+                    android:id="@+id/linearLayout">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Remove"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/blue_button" />
+
+                </LinearLayout>
+
             </LinearLayout>
             <!-- 1 row of 2 buttons with text and icon ends -->
 
