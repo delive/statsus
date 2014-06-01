@@ -108,4 +108,14 @@
         <item name="android:background">@drawable/value_5_bg</item>
     </style>
 
+    <style name="uicon_value_5_remove" parent="android:Widget">
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@drawable/value_5_bg_remove</item>
+    </style>
+
 </resources>

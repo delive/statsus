@@ -218,7 +218,7 @@
                     style="@style/note_container" />
 
                 <Button
-                    style="@style/uicon_value_5"
+                    style="@style/uicon_value_5_remove"
                     android:text="5"
                     android:textColor="#FFF"
                     android:id="@+id/button" />
@@ -255,7 +255,7 @@
                     style="@style/note_container" />
 
                 <Button
-                    style="@style/uicon_value_5"
+                    style="@style/uicon_value_5_remove"
                     android:text="2"
                     android:textColor="#FFF"
                     android:id="@+id/button" />
