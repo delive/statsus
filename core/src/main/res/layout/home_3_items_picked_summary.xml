@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="#151515"
+    android:layout_height="fill_parent">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="10dp"
+        android:background="#151515"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.example.statsusv1.statsusv1.Statsus">
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:adjustViewBounds="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginTop = "6dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/logo_statsus" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop = "2dip"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/icon_settings"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            style="@style/settings_button" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_marginTop = "10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_height="wrap_content"
+            android:background="#0d0d0d"
+            android:layout_below="@+id/imageButton"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/linearLayout1">
+
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="My Day"
+                android:onClick="submitStats"
+                android:id="@+id/button"
+                android:layout_marginLeft = "8dip"
+                style="@style/blue_button" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="Stats"
+                android:id="@+id/button"
+                android:onClick="myStats"
+                android:layout_marginLeft = "8dip"
+                android:layout_marginRight = "8dip"
+                style="@style/gray_button" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="Friends"
+                android:id="@+id/button"
+                android:layout_marginRight = "8dip"
+                style="@style/gray_button" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout1">
+
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/imageView2"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/date_background_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="December 12th 2014"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:id="@+id/textView"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:src="@drawable/arrow_right"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_marginRight = "8dip"
+                style="@style/white_button"
+                android:layout_alignTop="@+id/imageButton"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:src="@drawable/arrow_left"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_marginLeft = "8dip"
+                style="@style/white_button"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What would you like to keep track of?"
+            android:id="@+id/textView2"
+            android:layout_below="@+id/relativeLayout1"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop = "15dip"
+            android:layout_marginBottom="15dp"
+            android:textColor="#FFF"
+            android:textSize="30sp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="185dp"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/submit_items_bg"
+            android:id="@+id/relativeLayout">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:id="@+id/imageView2"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/submit_items_bg" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your items for today:"
+                android:id="@+id/textView3"
+                android:layout_marginLeft = "8dip"
+                android:layout_marginRight = "8dip"
+                android:layout_marginTop = "10dip"
+                android:textColor="#151515"
+                android:textSize="19sp" />
+
+            <!-- entry -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_below="@+id/textView3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft = "8dip"
+                android:layout_marginRight = "8dip"
+                android:layout_marginTop="10dp"
+                android:id="@+id/linearLayout1">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:src="@drawable/uicons_smiley"
+                    style="@style/uicon_container" />
+
+                <Button
+                    style="@style/uicon_whitebg_text"
+                    android:text="Happy"
+                    android:textColor="#c82d2f"
+                    android:layout_width="match_parent"
+                    android:id="@+id/button" />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:src="@drawable/note_na"
+                    style="@style/note_container" />
+
+                <Button
+                    style="@style/uicon_value_5"
+                    android:text="5"
+                    android:textColor="#FFF"
+                    android:id="@+id/button" />
+
+            </LinearLayout>
+            <!-- entry -->
+
+            <!-- entry -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft = "8dip"
+                android:layout_marginRight = "8dip"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/linearLayout1"
+                android:id="@+id/linearLayout2">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:src="@drawable/uicons_smiley"
+                    style="@style/uicon_container" />
+
+                <Button
+                    style="@style/uicon_whitebg_text"
+                    android:text="Happy"
+                    android:textColor="#c82d2f"
+                    android:layout_width="match_parent"
+                    android:id="@+id/button" />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:src="@drawable/note_exists"
+                    style="@style/note_container" />
+
+                <Button
+                    style="@style/uicon_value_5"
+                    android:text="2"
+                    android:textColor="#FFF"
+                    android:id="@+id/button" />
+
+            </LinearLayout>
+            <!-- entry -->
+
+            <!-- entry -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft = "8dip"
+                android:layout_marginRight = "8dip"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/linearLayout2"
+                android:id="@+id/linearLayout3">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:src="@drawable/uicons_smiley"
+                    style="@style/uicon_container" />
+
+                <Button
+                    style="@style/uicon_whitebg_text"
+                    android:text="Happy"
+                    android:textColor="#c82d2f"
+                    android:layout_width="match_parent"
+                    android:id="@+id/button" />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:src="@drawable/note_na"
+                    style="@style/note_container" />
+
+                <Button
+                    style="@style/uicon_value_5"
+                    android:text="3"
+                    android:textColor="#FFF"
+                    android:id="@+id/button" />
+
+            </LinearLayout>
+            <!-- entry -->
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/relativeLayout"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+
+            <!-- 1 row of 2 buttons with text and icon starts -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_marginTop = "15dp"
+                android:layout_height="wrap_content"
+                android:
+                android:id="@+id/linearLayout">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft = "4dip"
+                    android:layout_marginRight = "4dip"
+                    android:id="@+id/linearLayout">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Remove Items"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft = "4dip"
+                    android:layout_marginRight = "4dip"
+                    android:id="@+id/linearLayout">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Add More Items"
+                        android:id="@+id/button"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 1 row of 2 buttons with text and icon ends -->
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>

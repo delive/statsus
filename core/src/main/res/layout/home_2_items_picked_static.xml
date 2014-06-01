@@ -86,10 +86,23 @@
 
         </LinearLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Items you've picked so far:"
+            android:layout_below="@+id/linearLayout"
+            android:id="@+id/textView4"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop = "10dip"
+            android:layout_marginBottom="10dp"
+            android:textColor="#2d9dfb"
+            android:textSize="22sp" />
+
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="190dp"
-            android:layout_below="@+id/linearLayout"
+            android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:src="@drawable/submit_items_bg"
@@ -346,7 +359,7 @@
                 android:id="@+id/textView3"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
-                android:layout_marginTop = "10dip"
+                android:layout_marginTop = "20dip"
                 android:textColor="#2d9dfb"
                 android:textSize="22sp" />
 

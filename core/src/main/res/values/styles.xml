@@ -46,6 +46,16 @@
         <item name="android:background">@drawable/icon_bg</item>
     </style>
 
+    <style name="note_container" parent="android:Widget">
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@drawable/icon_bg_white</item>
+    </style>
+
     <style name="uicon_text" parent="android:Widget">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">35dp</item>

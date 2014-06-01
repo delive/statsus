@@ -129,13 +129,15 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_below="@+id/iconpreview"
+            android:paddingBottom="15dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
+            android:background="#0d0d0d"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:id="@+id/search_function">
+            android:id="@+id/linearLayout2">
 
             <EditText
                 android:layout_width="fill_parent"
@@ -146,21 +148,6 @@
                 android:text="Name of your item"
                 android:paddingLeft="15dp"
                 style="@style/gray_button"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@+id/search_function"
-            android:paddingBottom="15dp"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
-            android:background="#0d0d0d"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/linearLayout2">
 
             <!-- 1 row of 2 buttons with text and icon starts -->
             <LinearLayout
