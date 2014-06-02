@@ -1,23 +1,21 @@
 package com.statsus.core;
 
+import java.util.Collection;
 import java.util.Date;
 
 import com.statsus.core.metadata.Stat;
-import com.statsus.core.mystats.MyStats;
 import com.statsus.core.persistence.LocalPersistenceManager;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 
-public class Home extends Activity {
+public class Home
+        extends ActivityWithBanner {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +24,33 @@ public class Home extends Activity {
         initStatCategories();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initStatCategories();
+    }
+
+    /**
+     * already on this page, just re-init content in case
+     */
+    @Override
+    public void myDay(View v) {
+        onResume();
+    }
+
     /**
      * Builds the 2 column multi rowed stat category layout from stats selected by the user
      */
     private void initStatCategories() {
         final LinearLayout statContainer = (LinearLayout) findViewById(R.id.stat_category_container);
+        statContainer.removeAllViews();
 
         int colCount = 0;
         // init the first row
-        LinearLayout row = (LinearLayout) getLayoutInflater().inflate(R.layout.home_stat_row, statContainer, false);
+        LinearLayout row = (LinearLayout) getLayoutInflater().inflate(R.layout.home_category_row, statContainer, false);
         statContainer.addView(row);
-        for (final Stat stat : Stat.values()) {
+        final Collection<Stat> stats = LocalPersistenceManager.getUserSelectedStatCategories(getApplicationContext());
+        for (final Stat stat : stats) {
             if (colCount == 2) {
                 row = (LinearLayout) getLayoutInflater().inflate(R.layout.home_stat_row, statContainer, false);
                 statContainer.addView(row);
@@ -49,10 +63,14 @@ public class Home extends Activity {
             row.addView(col);
             colCount++;
         }
-    }
 
-    public void myStats(View v) {
-        startActivity(new Intent(this, MyStats.class));
+
+        if ((stats.size() & 1) != 0) {
+            // odd number of categories, need to inflate an empty col
+            final LinearLayout col =
+                    (LinearLayout) getLayoutInflater().inflate(R.layout.home_column_empty, statContainer, false);
+            row.addView(col);
+        }
     }
 
     public void submitStats(View v) {
@@ -71,25 +89,11 @@ public class Home extends Activity {
         LocalPersistenceManager.addStat(stat2, 5, uid, date, getApplicationContext());
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
-        return true;
+    public void addMoreItems(View v) {
+        startActivity(new Intent(this, Categories.class));
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public void editOrRemove(View v) {
+        startActivity(new Intent(this, EditOrRemoveStat.class));
     }
-
 }

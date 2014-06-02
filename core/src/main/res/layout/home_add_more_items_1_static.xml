@@ -60,7 +60,7 @@
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
                 android:text="My Day"
-                android:onClick="submitStats"
+                android:onClick="myDay"
                 android:id="@+id/button"
                 android:layout_marginLeft = "8dip"
                 style="@style/blue_button" />
@@ -79,6 +79,7 @@
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
                 android:text="Friends"
+                android:onClick="myFriends"
                 android:id="@+id/button"
                 android:layout_marginRight = "8dip"
                 style="@style/gray_button" />
@@ -128,7 +129,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="You can also browse for items in the categories bellow:"
+                android:text="You can also find items in the categories below:"
                 android:id="@+id/textView3"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"

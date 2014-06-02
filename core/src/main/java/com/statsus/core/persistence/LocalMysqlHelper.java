@@ -1,5 +1,6 @@
 package com.statsus.core.persistence;
 
+import com.statsus.core.persistence.DatabaseSchema.StatCategorySql;
 import com.statsus.core.persistence.DatabaseSchema.StatContentSql;
 
 import android.content.Context;
@@ -12,7 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 class LocalMysqlHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 4;
     private static final String DATABASE_NAME = "statsus.db";
 
     LocalMysqlHelper(final Context context) {
@@ -21,12 +22,14 @@ class LocalMysqlHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(final SQLiteDatabase db) {
-        db.execSQL(StatContentSql.SQL_CREATE_STATS_TABLE);
+        db.execSQL(StatContentSql.SQL_CREATE_TABLE);
+        db.execSQL(StatCategorySql.SQL_CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(final SQLiteDatabase db, final int oldVersion, final int newVersion) {
-        db.execSQL(StatContentSql.SQL_DELETE_STATS_TABLE);
+        db.execSQL(StatContentSql.SQL_DELETE_TABLE);
+        db.execSQL(StatCategorySql.SQL_DELETE_TABLE);
         onCreate(db);
     }
 }
