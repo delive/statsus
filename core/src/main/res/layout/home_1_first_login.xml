@@ -94,7 +94,6 @@
                 android:layout_alignParentStart="true"
                 android:id="@+id/relativeLayout">
 
-
             <ImageView
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
@@ -145,7 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="What would you like to keep track of?"
-                android:id="@+id/textView2"
+                android:id="@+id/keepTrack"
                 android:layout_below="@+id/relativeLayout"
                 android:layout_marginLeft="8dip"
                 android:layout_marginRight="8dip"
@@ -160,8 +159,69 @@
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/keepTrack"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/selectedStatsMainContainer">
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:id="@+id/selectedStats"/>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="4dip"
+                    android:visibility="gone"
+                    android:layout_marginRight="4dip"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cancelSubmitDailyStats">
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout">
+
+                    <Button
+                            android:layout_width="fill_parent"
+                            android:layout_weight="1"
+                            android:text="Cancel"
+                            android:layout_marginLeft="4dip"
+                            android:layout_marginRight="4dip"
+                            android:onClick="cancelDailyStats"
+                            style="@style/blue_button"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout">
+
+                    <Button
+                            android:layout_width="fill_parent"
+                            android:layout_weight="1"
+                            android:text="Submit"
+                            android:layout_marginLeft="4dip"
+                            android:layout_marginRight="4dip"
+                            android:id="@+id/button"
+                            android:onClick="myStats"
+                            style="@style/blue_button"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_below="@+id/textView2"
+                android:layout_below="@+id/selectedStatsMainContainer"
                 android:layout_marginTop="15dip"
                 android:paddingTop="5dp"
                 android:paddingBottom="25dp"

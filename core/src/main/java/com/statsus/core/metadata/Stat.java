@@ -63,6 +63,11 @@ public enum Stat {
         view.setBackgroundResource(this.backgroundDrawable);
     }
 
+    public void setBackgroundResource(final Button view) {
+        view.setBackgroundResource(this.backgroundDrawable);
+        view.setBackgroundColor(this.backgroundColor);
+    }
+
     public void setTextProperties(final Button button) {
         button.setTextColor(this.backgroundColor);
         button.setText(this.toString());
