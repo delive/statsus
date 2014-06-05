@@ -40,7 +40,7 @@ public class EditOrRemoveStat
         // init the first row
         LinearLayout row = (LinearLayout) getLayoutInflater().inflate(R.layout.home_category_row, statContainer, false);
         statContainer.addView(row);
-        final Collection<Stat> stats = LocalPersistenceManager.getUserSelectedStatCategories(getApplicationContext());
+        final Collection<Stat> stats = LocalPersistenceManager.getUserSelectedStats(getApplicationContext());
         for (final Stat stat : stats) {
             if (colCount == 2) {
                 row = (LinearLayout) getLayoutInflater().inflate(R.layout.home_stat_row, statContainer, false);

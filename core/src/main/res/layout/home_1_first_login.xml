@@ -79,6 +79,7 @@
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:text="Friends"
+                    android:onClick="myFriends"
                     android:id="@+id/button"
                     android:layout_marginRight="8dip"
                     style="@style/gray_button"/>
@@ -210,7 +211,7 @@
                             android:layout_marginLeft="4dip"
                             android:layout_marginRight="4dip"
                             android:id="@+id/button"
-                            android:onClick="myStats"
+                            android:onClick="submitDailyStats"
                             style="@style/blue_button"/>
 
                 </LinearLayout>

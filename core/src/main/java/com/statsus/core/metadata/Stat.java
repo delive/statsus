@@ -1,5 +1,7 @@
 package com.statsus.core.metadata;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -86,8 +88,8 @@ public enum Stat {
         throw new IllegalArgumentException("no such stat for id " + sid);
     }
 
-    public static Set<Stat> getStatsForCategory(final Category category) {
+    public static Collection<Stat> getStatsForCategory(final Category category) {
         final Set<Stat> stats = statsByCategory.get(category);
-        return stats == null ? Collections.EMPTY_SET : stats;
+        return stats == null ? Collections.EMPTY_LIST : new ArrayList<Stat>(stats);
     }
 }

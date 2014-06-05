@@ -13,7 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 class LocalMysqlHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 6;
     private static final String DATABASE_NAME = "statsus.db";
 
     LocalMysqlHelper(final Context context) {

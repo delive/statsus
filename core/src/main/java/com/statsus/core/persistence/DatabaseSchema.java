@@ -22,14 +22,19 @@ public class DatabaseSchema {
         public static final String COLUMN_NAME_DATE = "date";
         public static final String COLUMN_NAME_VAL = "val";
 
+        // primary key sid,uid,date
+
         public static final String SQL_CREATE_TABLE =
                 "CREATE TABLE " + StatContentSql.TABLE_NAME + " (" +
-                        StatContentSql._ID + " INTEGER PRIMARY KEY," +
-                        StatContentSql.COLUMN_NAME_STAT_ID + " INTEGER," +
-                        StatContentSql.COLUMN_NAME_USER_ID + " INTEGER," +
-                        StatContentSql.COLUMN_NAME_DATE + " DATE," +
-                        StatContentSql.COLUMN_NAME_VAL + " INTEGER" +
-                        " )";
+                        StatContentSql._ID + " INTEGER," +
+                        StatContentSql.COLUMN_NAME_STAT_ID + " INTEGER, " +
+                        StatContentSql.COLUMN_NAME_USER_ID + " BIGINT, " +
+                        StatContentSql.COLUMN_NAME_DATE + " DATE, " +
+                        StatContentSql.COLUMN_NAME_VAL + " INTEGER," +
+                        " PRIMARY KEY ("
+                        + StatContentSql.COLUMN_NAME_STAT_ID + ", "
+                        + StatContentSql.COLUMN_NAME_USER_ID + ", "
+                        + StatContentSql.COLUMN_NAME_DATE + "))";
 
         public static final String SQL_DELETE_TABLE =
                 "DROP TABLE IF EXISTS " + StatContentSql.TABLE_NAME;

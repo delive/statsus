@@ -1,6 +1,6 @@
 package com.statsus.core;
 
-import java.util.Set;
+import java.util.Collection;
 
 import com.statsus.core.metadata.Category;
 import com.statsus.core.metadata.Stat;
@@ -46,8 +46,8 @@ public class StatsForCategory
         // init the first row
         LinearLayout row = (LinearLayout) getLayoutInflater().inflate(R.layout.home_category_row, statContainer, false);
         statContainer.addView(row);
-        final Set<Stat> stats = Stat.getStatsForCategory(this.category);
-        for (final Stat stat : stats) {
+        final Collection<Stat> categoryStatsNotSelected = getCategoryStatsNotSelected();
+        for (final Stat stat : categoryStatsNotSelected) {
             if (colCount == 2) {
                 row = (LinearLayout) getLayoutInflater().inflate(R.layout.home_stat_row, statContainer, false);
                 statContainer.addView(row);
@@ -63,12 +63,22 @@ public class StatsForCategory
             colCount++;
         }
 
-        if ((stats.size() & 1) != 0) {
+        if ((categoryStatsNotSelected.size() & 1) != 0) {
             // odd number of categories, need to inflate an empty col
             final LinearLayout col =
                     (LinearLayout) getLayoutInflater().inflate(R.layout.home_column_empty, statContainer, false);
             row.addView(col);
         }
+    }
+
+    private Collection<Stat> getCategoryStatsNotSelected() {
+        final Collection<Stat> statsSelected = LocalPersistenceManager.getUserSelectedStats(getApplicationContext());
+        final Collection<Stat> stats = Stat.getStatsForCategory(this.category);
+
+        for (final Stat removeStat : statsSelected) {
+            stats.remove(removeStat);
+        }
+        return stats;
     }
 
     private OnClickListener getClickListenerForAddStatCategory(final Stat stat) {

@@ -1,6 +1,7 @@
 package com.statsus.core;
 
 import com.statsus.core.mystats.MyStats;
+import com.statsus.core.persistence.LocalPersistenceManager;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -26,8 +27,9 @@ public class ActivityWithBanner
       }
 
     public void myFriends(View v) {
-        final Intent intent = new Intent(v.getContext(), Friends.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-      }
+//        final Intent intent = new Intent(v.getContext(), Friends.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        startActivity(intent);
+        LocalPersistenceManager.truncateAll(getApplicationContext());
+    }
 }
