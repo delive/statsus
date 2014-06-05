@@ -46,8 +46,8 @@
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_marginTop = "10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:layout_height="wrap_content"
             android:background="#0d0d0d"
             android:layout_below="@+id/imageButton"
@@ -158,25 +158,19 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="225dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_below="@+id/keepTrack"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:background="#eaeaea"
             android:src="@drawable/submit_items_bg"
-            android:id="@+id/relativeLayout">
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:id="@+id/content_area">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:id="@+id/imageView2"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/submit_items_bg" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -185,28 +179,27 @@
                 android:id="@+id/textView3"
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
-                android:layout_marginTop = "10dip"
                 android:textColor="#151515"
                 android:textSize="19sp" />
 
             <!-- entry -->
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_below="@+id/textView3"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:id="@+id/linearLayout1">
 
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:src="@drawable/uicons_smiley"
-                    style="@style/uicon_container_remove" />
+                    android:background="#cccccc"
+                    style="@style/colored_squared" />
 
                 <Button
-                    style="@style/uicon_whitebg_text"
+                    style="@style/white_bg_text"
                     android:text="Happy"
                     android:textColor="#cccccc"
                     android:layout_width="match_parent"
@@ -215,13 +208,16 @@
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:src="@drawable/note_na"
-                    style="@style/note_container" />
+                    android:padding="3dp"
+                    android:background="#FFFFFF"
+                    style="@style/colored_squared" />
 
                 <Button
-                    style="@style/uicon_value_5_remove"
                     android:text="5"
                     android:textColor="#FFF"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:background="#CCCCCC"
+                    style="@style/colored_squared" />
 
             </LinearLayout>
             <!-- entry -->
@@ -234,16 +230,16 @@
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/linearLayout1"
                 android:id="@+id/linearLayout2">
 
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:src="@drawable/uicons_smiley"
-                    style="@style/uicon_container_remove" />
+                    android:background="#cccccc"
+                    style="@style/colored_squared" />
 
                 <Button
-                    style="@style/uicon_whitebg_text"
+                    style="@style/white_bg_text"
                     android:text="Happy"
                     android:textColor="#cccccc"
                     android:layout_width="match_parent"
@@ -252,13 +248,16 @@
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:src="@drawable/note_exists"
-                    style="@style/note_container" />
+                    android:padding="3dp"
+                    android:background="#FFFFFF"
+                    style="@style/colored_squared" />
 
-                <Button
-                    style="@style/uicon_value_5_remove"
-                    android:text="2"
-                    android:textColor="#FFF"
-                    android:id="@+id/button" />
+                <ImageButton
+                    android:src="@drawable/custom_value_white"
+                    android:id="@+id/button"
+                    android:padding="3dp"
+                    android:background="#CCCCCC"
+                    style="@style/colored_squared" />
 
             </LinearLayout>
             <!-- entry -->
@@ -271,16 +270,16 @@
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/linearLayout2"
                 android:id="@+id/linearLayout3">
 
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:src="@drawable/uicons_smiley"
-                    style="@style/uicon_container" />
+                    android:background="#952336"
+                    style="@style/colored_squared" />
 
                 <Button
-                    style="@style/uicon_whitebg_text"
+                    style="@style/white_bg_text"
                     android:text="Happy"
                     android:textColor="#c82d2f"
                     android:layout_width="match_parent"
@@ -289,13 +288,16 @@
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:src="@drawable/note_na"
-                    style="@style/note_container" />
+                    android:padding="3dp"
+                    android:background="#FFFFFF"
+                    style="@style/colored_squared" />
 
                 <Button
-                    style="@style/uicon_value_5"
                     android:text="3"
                     android:textColor="#FFF"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
 
             </LinearLayout>
             <!-- entry -->
@@ -305,11 +307,10 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_marginTop = "10dp"
+                android:layout_marginTop = "15dp"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/linearLayout3"
                 android:id="@+id/linearLayout">
 
                 <LinearLayout
@@ -321,7 +322,6 @@
 
                     <Button
                         android:layout_width="fill_parent"
-                        android:layout_weight="1"
                         android:text="Cancel"
                         android:layout_marginLeft = "4dip"
                         android:layout_marginRight = "4dip"
@@ -339,7 +339,6 @@
 
                     <Button
                         android:layout_width="fill_parent"
-                        android:layout_weight="1"
                         android:text="Submit"
                         android:layout_marginLeft = "4dip"
                         android:layout_marginRight = "4dip"
@@ -351,14 +350,14 @@
             </LinearLayout>
             <!-- 1 row of 2 buttons with text and icon ends -->
 
-        </RelativeLayout>
+        </LinearLayout>
 
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_below="@+id/relativeLayout"
+            android:layout_below="@+id/content_area"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
             android:paddingBottom="15dp"

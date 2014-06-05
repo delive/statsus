@@ -25,7 +25,7 @@
             android:adjustViewBounds="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft = "8dip"
-            android:layout_marginTop = "6dip"
+            android:layout_marginTop = "4dip"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:src="@drawable/logo_statsus" />
@@ -46,8 +46,8 @@
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_marginTop = "10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:layout_height="wrap_content"
             android:background="#0d0d0d"
             android:layout_below="@+id/imageButton"
@@ -94,30 +94,22 @@
             android:id="@+id/textView4"
             android:layout_marginLeft = "8dip"
             android:layout_marginRight = "8dip"
-            android:layout_marginTop = "10dip"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop = "15dip"
+            android:layout_marginBottom="15dp"
             android:textColor="#2d9dfb"
             android:textSize="22sp" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="190dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:src="@drawable/submit_items_bg"
-            android:id="@+id/relativeLayout">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:id="@+id/imageView2"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/submit_items_bg" />
+            android:orientation="vertical"
+            android:background="#eaeaea"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:id="@+id/item_picks">
 
             <!-- entry -->
             <LinearLayout
@@ -126,50 +118,54 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
-                android:layout_marginTop="10dp"
                 android:id="@+id/linearLayout1">
 
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:src="@drawable/uicons_smiley"
-                    style="@style/uicon_container" />
+                    android:background="#952336"
+                    style="@style/colored_squared" />
 
                 <Button
-                    style="@style/uicon_whitebg_text"
+                    style="@style/white_bg_text"
                     android:text="Happy"
-                    android:textColor="#c82d2f"
+                    android:textColor="#952336"
                     android:layout_width="match_parent"
                     android:id="@+id/button" />
 
                 <Button
-                    style="@style/uicon_values_1_to_4"
                     android:text="1"
                     android:textColor="#FFF"
                     android:alpha="0.2"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
                 <Button
-                    style="@style/uicon_values_1_to_4"
                     android:text="2"
-                    android:textColor="#FFF"
-                    android:alpha="0.4"
-                    android:id="@+id/button" />
+                    android:textColor="#cccccc"
+                    android:id="@+id/button"
+                    android:background="#FFF"
+                    style="@style/colored_squared" />
                 <Button
-                    style="@style/uicon_values_1_to_4"
                     android:text="3"
                     android:textColor="#FFF"
                     android:alpha="0.6"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
                 <Button
-                    style="@style/uicon_values_1_to_4"
                     android:text="4"
                     android:textColor="#FFF"
-                    android:alpha="0.8"
-                    android:id="@+id/button" />
-                <Button
-                    style="@style/uicon_value_5"
-                    android:text="5"
+                    android:alpha="0.8"android:id="@+id/button"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
+                <ImageButton
+                    android:src="@drawable/custom_value_white"
                     android:textColor="#FFF"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:padding="3dp"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
 
             </LinearLayout>
             <!-- entry -->
@@ -182,50 +178,55 @@
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/linearLayout1"
                 android:id="@+id/linearLayout2">
 
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:src="@drawable/uicons_smiley"
-                    style="@style/uicon_container" />
+                    android:background="#952336"
+                    style="@style/colored_squared" />
 
                 <Button
-                    style="@style/uicon_whitebg_text"
+                    style="@style/white_bg_text"
                     android:text="Happy"
-                    android:textColor="#c82d2f"
+                    android:textColor="#952336"
                     android:layout_width="match_parent"
                     android:id="@+id/button" />
 
                 <Button
-                    style="@style/uicon_values_1_to_4"
                     android:text="1"
                     android:textColor="#FFF"
                     android:alpha="0.2"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
                 <Button
-                    style="@style/uicon_values_1_to_4"
                     android:text="2"
                     android:textColor="#FFF"
                     android:alpha="0.4"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
                 <Button
-                    style="@style/uicon_values_1_to_4"
                     android:text="3"
                     android:textColor="#FFF"
                     android:alpha="0.6"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
                 <Button
-                    style="@style/uicon_values_1_to_4"
                     android:text="4"
+                    android:textColor="#cccccc"
+                    android:id="@+id/button"
+                    android:background="#FFF"
+                    style="@style/colored_squared" />
+                <ImageButton
+                    android:src="@drawable/custom_value_white"
                     android:textColor="#FFF"
-                    android:alpha="0.8"
-                    android:id="@+id/button" />
-                <Button
-                    style="@style/uicon_value_5"
-                    android:text="5"
-                    android:textColor="#FFF"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:padding="3dp"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
 
             </LinearLayout>
             <!-- entry -->
@@ -238,50 +239,55 @@
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/linearLayout2"
                 android:id="@+id/linearLayout3">
 
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:src="@drawable/uicons_smiley"
-                    style="@style/uicon_container" />
+                    android:background="#952336"
+                    style="@style/colored_squared" />
 
                 <Button
-                    style="@style/uicon_whitebg_text"
+                    style="@style/white_bg_text"
                     android:text="Happy"
-                    android:textColor="#c82d2f"
+                    android:textColor="#952336"
                     android:layout_width="match_parent"
                     android:id="@+id/button" />
 
                 <Button
-                    style="@style/uicon_values_1_to_4"
                     android:text="1"
                     android:textColor="#FFF"
                     android:alpha="0.2"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
                 <Button
-                    style="@style/uicon_values_1_to_4"
                     android:text="2"
                     android:textColor="#FFF"
                     android:alpha="0.4"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
                 <Button
-                    style="@style/uicon_values_1_to_4"
                     android:text="3"
                     android:textColor="#FFF"
                     android:alpha="0.6"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
                 <Button
-                    style="@style/uicon_values_1_to_4"
                     android:text="4"
                     android:textColor="#FFF"
                     android:alpha="0.8"
-                    android:id="@+id/button" />
-                <Button
-                    style="@style/uicon_value_5"
-                    android:text="5"
-                    android:textColor="#FFF"
-                    android:id="@+id/button" />
+                    android:id="@+id/button"
+                    android:background="#952336"
+                    style="@style/colored_squared" />
+                <ImageButton
+                    android:src="@drawable/custom_value_gray"
+                    android:id="@+id/button"
+                    android:padding="3dp"
+                    android:background="#FFF"
+                    style="@style/colored_squared" />
 
             </LinearLayout>
             <!-- entry -->
@@ -294,7 +300,6 @@
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/linearLayout3"
                 android:id="@+id/linearLayout">
 
                 <LinearLayout
@@ -337,17 +342,18 @@
             <!-- 1 row of 2 buttons with text and icon ends -->
 
 
-        </RelativeLayout>
+        </LinearLayout>
 
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_below="@+id/relativeLayout"
+            android:layout_below="@+id/item_picks"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
             android:paddingBottom="15dp"
+            android:paddingTop="15dp"
             android:background="#0d0d0d"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
@@ -359,7 +365,6 @@
                 android:id="@+id/textView3"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
-                android:layout_marginTop = "20dip"
                 android:textColor="#2d9dfb"
                 android:textSize="22sp" />
 
@@ -369,7 +374,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_marginTop = "10dp"
+                android:layout_marginTop = "15dp"
                 android:layout_height="wrap_content"
                 android:background="#0d0d0d"
                 android:id="@+id/linearLayout">
@@ -387,12 +392,13 @@
                     <ImageButton
                         android:id="@+id/imageButton"
                         android:src="@drawable/uicons_smiley"
-                        style="@style/uicon_container" />
+                        android:background="#952336"
+                        style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="Happy"
-                        android:textColor="#c82d2f"
+                        android:textColor="#952336"
                         android:id="@+id/button" />
 
                 </LinearLayout>
@@ -410,12 +416,13 @@
                     <ImageButton
                         android:id="@+id/imageButton"
                         android:src="@drawable/uicons_smiley"
-                        style="@style/uicon_container" />
+                        android:background="#952336"
+                        style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="Happy"
-                        android:textColor="#c82d2f"
+                        android:textColor="#952336"
                         android:id="@+id/button" />
 
                 </LinearLayout>
@@ -444,12 +451,13 @@
                     <ImageButton
                         android:id="@+id/imageButton"
                         android:src="@drawable/uicons_smiley"
-                        style="@style/uicon_container" />
+                        android:background="#952336"
+                        style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="Happy"
-                        android:textColor="#c82d2f"
+                        android:textColor="#952336"
                         android:id="@+id/button" />
 
                 </LinearLayout>
@@ -467,12 +475,13 @@
                     <ImageButton
                         android:id="@+id/imageButton"
                         android:src="@drawable/uicons_smiley"
-                        style="@style/uicon_container" />
+                        android:background="#952336"
+                        style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="Happy"
-                        android:textColor="#c82d2f"
+                        android:textColor="#952336"
                         android:id="@+id/button" />
 
                 </LinearLayout>
@@ -501,12 +510,13 @@
                     <ImageButton
                         android:id="@+id/imageButton"
                         android:src="@drawable/uicons_smiley"
-                        style="@style/uicon_container" />
+                        android:background="#952336"
+                        style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="Happy"
-                        android:textColor="#c82d2f"
+                        android:textColor="#952336"
                         android:id="@+id/button" />
 
                 </LinearLayout>
@@ -531,6 +541,7 @@
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_marginTop = "15dp"
+            android:layout_marginBottom = "15dp"
             android:layout_height="1dp"
             android:background="#20FFFFFF"
             android:layout_marginLeft="4dp"
@@ -542,7 +553,6 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_marginTop = "15dp"
                 android:layout_height="wrap_content"
                 android:background="#0d0d0d"
                 android:id="@+id/linearLayout">

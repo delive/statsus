@@ -45,9 +45,9 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_marginTop = "10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:layout_marginTop = "15dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:layout_height="wrap_content"
             android:background="#0d0d0d"
             android:layout_below="@+id/imageButton"
@@ -94,36 +94,12 @@
             android:id="@+id/textView3"
             android:layout_marginLeft = "8dip"
             android:layout_marginRight = "8dip"
-            android:layout_marginTop = "10dip"
+            android:layout_marginTop = "15dip"
             android:textColor="#2d9dfb"
             android:layout_below="@+id/my_navigation"
             android:textSize="22sp" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft = "8dip"
-            android:layout_marginRight = "8dip"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/textView3"
-            android:background="#0d0d0d"
-            android:id="@+id/iconpreview">
 
-
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:src="@drawable/uicons_smiley"
-                style="@style/uicon_container" />
-
-            <Button
-                style="@style/uicon_text"
-                android:text="Item Preview"
-                android:textColor="#c82d2f"
-                android:id="@+id/button" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -132,7 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft = "8dip"
             android:layout_marginRight = "8dip"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_below="@+id/textView3"
             android:background="#0d0d0d"
             android:id="@+id/iconpreview1">
@@ -141,7 +117,8 @@
             <ImageButton
                 android:id="@+id/imageButton"
                 android:src="@drawable/uicons_smiley"
-                style="@style/uicon_container" />
+                android:background="#952336"
+                style="@style/colored_squared" />
 
             <Button
                 style="@style/uicon_text"
@@ -168,7 +145,8 @@
             <ImageButton
                 android:id="@+id/imageButton"
                 android:src="@drawable/uicons_smiley"
-                style="@style/uicon_container" />
+                android:background="#952336"
+                style="@style/colored_squared" />
 
             <Button
                 style="@style/uicon_text"
@@ -187,14 +165,14 @@
             android:layout_marginRight = "8dip"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/iconpreview2"
-            android:background="#0d0d0d"
             android:id="@+id/iconpreview3">
 
 
             <ImageButton
                 android:id="@+id/imageButton"
                 android:src="@drawable/uicons_smiley"
-                style="@style/uicon_container" />
+                android:background="#952336"
+                style="@style/colored_squared" />
 
             <Button
                 style="@style/uicon_text"
@@ -210,7 +188,7 @@
             android:layout_height="fill_parent"
             android:layout_below="@+id/iconpreview3"
             android:paddingBottom="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
             android:background="#0d0d0d"
@@ -235,7 +213,8 @@
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:src="@drawable/uicons_smiley"
-                    style="@style/uicon_container" />
+                    android:background="#952336"
+                    style="@style/colored_squared" />
 
                 <Button
                     style="@style/uicon_text"

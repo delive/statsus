@@ -46,8 +46,8 @@
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_marginTop = "10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:layout_height="wrap_content"
             android:background="#0d0d0d"
             android:layout_below="@+id/imageButton"
@@ -92,8 +92,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_below="@+id/my_navigation"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
             android:layout_alignParentLeft="true"
@@ -108,7 +108,7 @@
             android:layout_marginRight = "4dip"
             android:text="Search here for the items you'd like to add"
             android:paddingLeft="15dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             style="@style/gray_button"/>
 
         </LinearLayout>
@@ -133,7 +133,7 @@
                 android:id="@+id/textView3"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
-                android:layout_marginTop = "10dip"
+                android:layout_marginTop = "15dip"
                 android:textColor="#2d9dfb"
                 android:textSize="22sp" />
 
@@ -143,7 +143,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_marginTop = "10dp"
+                android:layout_marginTop = "15dp"
                 android:layout_height="wrap_content"
                 android:background="#0d0d0d"
                 android:id="@+id/linearLayout">
