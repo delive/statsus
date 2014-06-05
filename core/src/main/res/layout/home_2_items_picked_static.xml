@@ -49,7 +49,7 @@
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:layout_height="wrap_content"
-            android:background="#0d0d0d"
+            android:background="#000"
             android:layout_below="@+id/imageButton"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -354,7 +354,7 @@
             android:paddingRight="4dp"
             android:paddingBottom="15dp"
             android:paddingTop="15dp"
-            android:background="#0d0d0d"
+            android:background="#000"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
 
@@ -376,7 +376,6 @@
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "15dp"
                 android:layout_height="wrap_content"
-                android:background="#0d0d0d"
                 android:id="@+id/linearLayout">
 
                 <LinearLayout
@@ -386,7 +385,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -410,7 +408,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -435,7 +432,6 @@
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "10dp"
                 android:layout_height="wrap_content"
-                android:background="#0d0d0d"
                 android:id="@+id/linearLayout">
 
                 <LinearLayout
@@ -445,7 +441,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -469,7 +464,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -494,7 +488,6 @@
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "10dp"
                 android:layout_height="wrap_content"
-                android:background="#0d0d0d"
                 android:id="@+id/linearLayout">
 
                 <LinearLayout
@@ -504,7 +497,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -528,7 +520,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
 
@@ -554,7 +545,6 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="#0d0d0d"
                 android:id="@+id/linearLayout">
 
                 <LinearLayout
@@ -564,7 +554,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <Button
@@ -584,7 +573,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <Button

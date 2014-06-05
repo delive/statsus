@@ -49,7 +49,7 @@
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:layout_height="wrap_content"
-            android:background="#0d0d0d"
+            android:background="#000"
             android:layout_below="@+id/imageButton"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -109,7 +109,7 @@
                 android:text="Search here for the items you'd like to add"
                 android:paddingLeft="15dp"
                 android:layout_height="40dp"
-                style="@style/gray_button"/>
+                style="@style/input_black"/>
 
         </LinearLayout>
 
@@ -121,21 +121,41 @@
             android:paddingBottom="15dp"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
-            android:background="#0d0d0d"
+            android:background="#000"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:id="@+id/linearLayout2">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop = "15dip"
             android:id="@+id/linearLayout2">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Currently Viewing: Sports"
+                android:text="Currently Viewing:"
                 android:id="@+id/textView3"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
-                android:layout_marginTop = "15dip"
                 android:textColor="#2d9dfb"
                 android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sports"
+                android:id="@+id/textView3"
+                android:layout_marginLeft = "4dip"
+                android:layout_marginRight = "4dip"
+                android:textColor="#FFF"
+                android:textSize="22sp" />
+
+            </LinearLayout>
 
 
 
@@ -145,7 +165,6 @@
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "15dp"
                 android:layout_height="wrap_content"
-                android:background="#0d0d0d"
                 android:id="@+id/linearLayout">
 
                 <LinearLayout
@@ -155,7 +174,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -179,7 +197,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -205,7 +222,6 @@
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "10dp"
                 android:layout_height="wrap_content"
-                android:background="#0d0d0d"
                 android:id="@+id/linearLayout">
 
                 <LinearLayout
@@ -215,7 +231,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -239,7 +254,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -265,7 +279,6 @@
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "10dp"
                 android:layout_height="wrap_content"
-                android:background="#0d0d0d"
                 android:id="@+id/linearLayout">
 
                 <LinearLayout
@@ -275,7 +288,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -299,7 +311,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -325,7 +336,6 @@
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "10dp"
                 android:layout_height="wrap_content"
-                android:background="#0d0d0d"
                 android:id="@+id/linearLayout">
 
                 <LinearLayout
@@ -335,7 +345,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -359,7 +368,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <ImageButton
@@ -395,7 +403,6 @@
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "15dp"
                 android:layout_height="wrap_content"
-                android:background="#0d0d0d"
                 android:id="@+id/linearLayout">
 
                 <LinearLayout
@@ -403,7 +410,6 @@
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <Button
@@ -422,7 +428,6 @@
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:background="#0d0d0d"
                     android:id="@+id/linearLayout">
 
                     <Button
