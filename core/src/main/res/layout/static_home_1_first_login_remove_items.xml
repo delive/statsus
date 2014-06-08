@@ -9,7 +9,7 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="10dp"
@@ -20,8 +20,9 @@
 
         <ImageView
             android:layout_width="150dp"
+            android:contentDescription="@string/app_name"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView"
+            android:id="@+id/logo_image"
             android:adjustViewBounds="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft = "8dip"
@@ -31,7 +32,8 @@
             android:src="@drawable/logo_statsus" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/settings_button"
+            android:contentDescription="@string/settings_button"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight = "8dip"
@@ -50,26 +52,25 @@
             android:paddingBottom="15dp"
             android:layout_height="wrap_content"
             android:background="#000"
-            android:layout_below="@+id/imageButton"
+            android:layout_below="@+id/settings_button"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/my_navigation">
-
+            android:id="@+id/top_navigation_container">
 
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="My Day"
-                android:onClick="submitStats"
-                android:id="@+id/button"
+                android:text="@string/bt_my_day"
+                android:onClick="myDay"
+                android:id="@+id/bt_my_day"
                 android:layout_marginLeft = "8dip"
                 style="@style/blue_button" />
 
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="Stats"
-                android:id="@+id/button"
+                android:text="@string/bt_stats"
+                android:id="@+id/bt_stats"
                 android:onClick="myStats"
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
@@ -78,57 +79,102 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="Friends"
-                android:id="@+id/button"
+                android:text="@string/bt_friends"
+                android:id="@+id/bt_friends"
                 android:layout_marginRight = "8dip"
                 style="@style/gray_button" />
 
-
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
+        <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@+id/my_navigation"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/top_navigation_container"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:id="@+id/search_function">
+            android:id="@+id/date_container">
 
-            <EditText
+
+            <ImageView
                 android:layout_width="fill_parent"
-                android:id="@+id/editText2"
-                android:layout_below="@+id/linearLayout"
-                android:layout_marginLeft = "4dip"
-                android:layout_marginRight = "4dip"
-                android:text="Search here for the items you'd like to add"
-                android:paddingLeft="15dp"
-                android:layout_height="40dp"
-                style="@style/input_black"/>
+                android:layout_height="fill_parent"
+                android:contentDescription="@string/date_bg"
+                android:id="@+id/date_background"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/date_background_1" />
 
-        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/current_date"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:id="@+id/current_date"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageButton
+                android:id="@+id/date_view_next"
+                android:contentDescription="@string/date_view_next"
+                android:src="@drawable/arrow_right"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_marginRight = "8dip"
+                style="@style/white_button"
+                android:layout_alignTop="@+id/date_view_previous"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <ImageButton
+                android:id="@+id/date_view_previous"
+                android:contentDescription="@string/date_view_previous"
+                android:src="@drawable/arrow_left"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_marginLeft = "8dip"
+                style="@style/white_button"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_text_1"
+            android:id="@+id/keepTrack"
+            android:layout_below="@+id/date_container"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop = "15dip"
+            android:textColor="#FFF"
+            android:textSize="30sp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_below="@+id/search_function"
+            android:layout_below="@+id/keepTrack"
+            android:layout_marginTop = "15dip"
             android:paddingBottom="15dp"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
             android:background="#000"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/linearLayout2">
+            android:layout_alignParentStart="true">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Currently Viewing: My Items"
+                android:text="@string/sub_text_1"
                 android:id="@+id/textView3"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
@@ -136,15 +182,13 @@
                 android:textColor="#2d9dfb"
                 android:textSize="22sp" />
 
-
-
             <!-- 1 row of 2 buttons with text and icon starts -->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "15dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/linearLayout">
+                android:baselineAligned="false"
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -152,20 +196,20 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginRight = "4dip">
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/item_icon_1"
+                        android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
+                        android:background="#1f1f1f"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
-                        android:text="Soccer"
-                        android:textColor="#952336"
-                        android:id="@+id/button" />
+                        android:text="@string/item_text"
+                        android:textColor="#484848"
+                        android:id="@+id/item_text_1" />
 
                 </LinearLayout>
 
@@ -175,90 +219,32 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginRight = "4dip">
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/item_icon_2"
+                        android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
                         android:background="#952336"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
-                        android:text="Baseball"
+                        android:text="@string/item_text"
                         android:textColor="#952336"
-                        android:id="@+id/button" />
-
-                </LinearLayout>
-            </LinearLayout>
-            <!-- 1 row of 2 buttons with text and icon ends -->
-
-
-            <!-- 1 row of 2 buttons with text and icon starts -->
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_marginTop = "10dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/linearLayout">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
-
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
-                        style="@style/colored_squared" />
-
-                    <Button
-                        style="@style/uicon_text"
-                        android:text="Tennis"
-                        android:textColor="#952336"
-                        android:id="@+id/button" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
-
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
-                        style="@style/colored_squared" />
-
-                    <Button
-                        style="@style/uicon_text"
-                        android:text="Football"
-                        android:textColor="#952336"
-                        android:id="@+id/button" />
+                        android:id="@+id/item_text_2" />
 
                 </LinearLayout>
             </LinearLayout>
             <!-- 1 row of 2 buttons with text and icon ends -->
 
-
             <!-- 1 row of 2 buttons with text and icon starts -->
             <LinearLayout
                 android:orientation="horizontal"
+                android:baselineAligned="false"
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "10dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/linearLayout">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -266,20 +252,20 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginRight = "4dip">
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/item_icon_3"
+                        android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
+                        android:background="#1f1f1f"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
-                        android:text="Swimming"
-                        android:textColor="#952336"
-                        android:id="@+id/button" />
+                        android:text="@string/item_text"
+                        android:textColor="#484848"
+                        android:id="@+id/item_text_3" />
 
                 </LinearLayout>
 
@@ -289,33 +275,32 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginRight = "4dip">
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/item_icon_4"
+                        android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
+                        android:background="#1f1f1f"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
-                        android:text="Running"
-                        android:textColor="#952336"
-                        android:id="@+id/button" />
+                        android:text="@string/item_text"
+                        android:textColor="#484848"
+                        android:id="@+id/item_text_4" />
 
                 </LinearLayout>
             </LinearLayout>
             <!-- 1 row of 2 buttons with text and icon ends -->
 
-
             <!-- 1 row of 2 buttons with text and icon starts -->
             <LinearLayout
                 android:orientation="horizontal"
+                android:baselineAligned="false"
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "10dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/linearLayout">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -323,20 +308,20 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginRight = "4dip">
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/item_icon_5"
+                        android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
                         android:background="#952336"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
-                        android:text="Snowboarding"
+                        android:text="@string/item_text"
                         android:textColor="#952336"
-                        android:id="@+id/button" />
+                        android:id="@+id/item_text_5" />
 
                 </LinearLayout>
 
@@ -347,19 +332,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:background="#0d0d0d">
 
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
-                        style="@style/colored_squared" />
 
-                    <Button
-                        style="@style/uicon_text"
-                        android:text="Bow Shooting"
-                        android:textColor="#952336"
-                        android:id="@+id/button" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -373,59 +348,59 @@
                 android:background="#20FFFFFF"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
-                android:id="@+id/linearLayout">
+                android:id="@+id/divider">
             </LinearLayout>
 
             <!-- 1 row of 2 buttons with text and icon starts -->
             <LinearLayout
                 android:orientation="horizontal"
+                android:baselineAligned="false"
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "15dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/linearLayout">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginLeft = "4dip"
+                    android:layout_marginRight = "4dip">
 
                     <Button
                         android:layout_width="fill_parent"
-                        android:layout_weight="1"
-                        android:text="Add New"
-                        android:layout_marginLeft = "4dip"
-                        android:layout_marginRight = "4dip"
-                        android:id="@+id/button"
+                        android:text="@string/cancel"
+                        android:id="@+id/cancel"
                         android:onClick="myStats"
-                        style="@style/blue_button" />
+                        style="@style/gray_button" />
+
+
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft = "4dip"
+                    android:layout_marginRight = "4dip"
                     android:id="@+id/linearLayout">
 
                     <Button
                         android:layout_width="fill_parent"
-                        android:layout_weight="1"
-                        android:text="Edit"
-                        android:layout_marginLeft = "4dip"
-                        android:layout_marginRight = "4dip"
-                        android:id="@+id/button"
+                        android:text="@string/remove"
+                        android:id="@+id/remove"
                         android:onClick="myStats"
                         style="@style/blue_button" />
 
                 </LinearLayout>
+
             </LinearLayout>
             <!-- 1 row of 2 buttons with text and icon ends -->
 
-
-
         </LinearLayout>
+
 
     </RelativeLayout>
 

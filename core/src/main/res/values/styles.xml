@@ -4,8 +4,8 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
          <item name="android:windowNoTitle">true</item>
-    </style>
 
+    </style>
 
     <style name="white_button" parent="android:Widget">
         <item name="android:background">@drawable/white_button</item>
@@ -13,6 +13,87 @@
         <item name="android:layout_height">35dp</item>
         <item name="android:layout_width">35dp</item>
     </style>
+
+    <style name="white_bg_text" parent="android:Widget">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:background">#FFF</item>
+    </style>
+
+
+    <style name="blue_button" parent="android:Widget">
+        <item name="android:background">#2d9dfb</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="gray_button" parent="android:Widget">
+        <item name="android:background">@drawable/bt_gray_full</item>
+        <item name="android:textColor">#2d9dfb</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="input_black" parent="android:Widget">
+        <item name="android:background">@drawable/input_black</item>
+        <item name="android:textColor">#2d9dfb</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="uicon_text" parent="android:Widget">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:scaleType">fitCenter</item>
+
+        <item name="android:layout_marginRight">-1dp</item>
+
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:background">@drawable/bt_gray_full_2</item>
+    </style>
+
+    <style name="colored_squared" parent="android:Widget">
+        <item name="android:layout_height">34dp</item>
+        <item name="android:layout_width">34dp</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="settings_button" parent="android:Widget">
+        <item name="android:background">@drawable/bt_gray_full</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:textColor">#2d9dfb</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:layout_width">34dp</item>
+    </style>
+
+
+    <style name="row_with_one_item" parent="android:Widget">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginLeft">4dip</item>
+        <item name="android:layout_marginRight">4dip</item>
+    </style>
+
+    <!--old styles that are no longer needed-->
+
 
     <style name="uicon_container" parent="android:Widget">
         <item name="android:layout_height">35dp</item>
@@ -85,76 +166,9 @@
         <item name="android:background">@drawable/value_5_bg_remove</item>
     </style>
 
-    <!--new styles-->
+    <!--old styles that are no longer needed-->
 
 
-    <style name="white_bg_text" parent="android:Widget">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">34dp</item>
-        <item name="android:paddingTop">0dp</item>
-        <item name="android:paddingBottom">0dp</item>
-        <item name="android:paddingLeft">6dp</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:gravity">left|center_vertical</item>
-        <item name="android:background">#FFF</item>
-    </style>
 
-
-    <style name="blue_button" parent="android:Widget">
-        <item name="android:background">#2d9dfb</item>
-        <item name="android:textColor">#FFF</item>
-        <item name="android:layout_height">35dp</item>
-        <item name="android:paddingTop">0dp</item>
-        <item name="android:paddingBottom">0dp</item>
-    </style>
-
-    <style name="gray_button" parent="android:Widget">
-        <item name="android:background">@drawable/bt_gray_full</item>
-        <item name="android:textColor">#2d9dfb</item>
-        <item name="android:layout_height">34dp</item>
-        <item name="android:paddingTop">0dp</item>
-        <item name="android:paddingBottom">0dp</item>
-    </style>
-
-    <style name="input_black" parent="android:Widget">
-        <item name="android:background">@drawable/input_black</item>
-        <item name="android:textColor">#2d9dfb</item>
-        <item name="android:layout_height">34dp</item>
-        <item name="android:paddingTop">0dp</item>
-        <item name="android:paddingBottom">0dp</item>
-    </style>
-
-    <style name="uicon_text" parent="android:Widget">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">34dp</item>
-        <item name="android:padding">6dp</item>
-        <item name="android:layout_alignParentTop">true</item>
-        <item name="android:layout_alignParentRight">true</item>
-        <item name="android:layout_alignParentEnd">true</item>
-        <item name="android:scaleType">fitCenter</item>
-
-        <item name="android:layout_marginRight">-1dp</item>
-
-        <item name="android:gravity">left|center_vertical</item>
-        <item name="android:background">@drawable/bt_gray_full_2</item>
-    </style>
-
-    <style name="colored_squared" parent="android:Widget">
-        <item name="android:layout_height">34dp</item>
-        <item name="android:layout_width">34dp</item>
-        <item name="android:padding">6dp</item>
-        <item name="android:layout_alignParentTop">true</item>
-        <item name="android:layout_alignParentRight">true</item>
-        <item name="android:layout_alignParentEnd">true</item>
-        <item name="android:scaleType">fitCenter</item>
-    </style>
-
-    <style name="settings_button" parent="android:Widget">
-        <item name="android:background">@drawable/bt_gray_full</item>
-        <item name="android:padding">6dp</item>
-        <item name="android:textColor">#2d9dfb</item>
-        <item name="android:layout_height">34dp</item>
-        <item name="android:layout_width">34dp</item>
-    </style>
 
 </resources>

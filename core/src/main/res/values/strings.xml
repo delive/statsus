@@ -2,6 +2,55 @@
 <resources>
 
     <string name="app_name">Statsus</string>
+    <string name="settings_button">Statsus Settings</string>
+    <string name="bt_my_day">My Day</string>
+    <string name="bt_stats">Stats</string>
+    <string name="bt_friends">Friends</string>
+    <string name="date_bg">Date Background Image</string>
+    <string name="current_date">December 12th 2014</string>
+    <string name="date_view_next">Next Day</string>
+    <string name="date_view_previous">Previous Day</string>
+    <string name="intro_text_1">What would you like to keep track of?</string>
+    <string name="sub_text_1">Pick from the items below:</string>
+    <string name="sub_text_2">Click the item you'd like to edit:</string>
+    <string name="sub_text_3">Items you've picked so far:</string>
+    <string name="sub_text_4">Add more from the items bellow:</string>
+    <string name="sub_text_5">Your items for today:</string>
+    <string name="sub_text_6">You can also find items in the categories below:</string>
+    <string name="sub_text_7">Add your own item:</string>
+    <string name="input_text_1">Search here for the items you'd like to add</string>
+    <string name="item_icon">Item Icon</string>
+    <string name="item_text">Happy</string>
+    <string name="item_text_preview">Item Preview</string>
+    <string name="remove_items">Remove Items</string>
+    <string name="add_more_items">Add More Items</string>
+    <string name="item_name">Name of your item</string>
+    <string name="change_icon">Change Icon</string>
+    <string name="change_color">Change Color</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit">Edit</string>
+    <string name="remove">Remove</string>
+    <string name="submit">Submit</string>
+    <string name="new_item">Add New Item</string>
+    <string name="my_items">My Items</string>
+    <string name="finished">Finished</string>
+    <string name="note_na">Note Not Available</string>
+    <string name="note_exists">Note Exists</string>
+    <string name="custom_numeric_value">Custom Numeric Value</string>
+    <string name="default_numeric_value">5</string>
+    <string name="category_title">Category Title</string>
+    <string name="currently_viewing">Currently Viewing:</string>
+
+
+
+
+
+
+
+
+
+
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 

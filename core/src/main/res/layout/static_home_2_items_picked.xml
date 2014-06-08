@@ -9,7 +9,7 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="10dp"
@@ -20,18 +20,20 @@
 
         <ImageView
             android:layout_width="150dp"
+            android:contentDescription="@string/app_name"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView"
+            android:id="@+id/logo_image"
             android:adjustViewBounds="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft = "8dip"
-            android:layout_marginTop = "4dip"
+            android:layout_marginTop = "6dip"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:src="@drawable/logo_statsus" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/settings_button"
+            android:contentDescription="@string/settings_button"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight = "8dip"
@@ -50,26 +52,25 @@
             android:paddingBottom="15dp"
             android:layout_height="wrap_content"
             android:background="#000"
-            android:layout_below="@+id/imageButton"
+            android:layout_below="@+id/settings_button"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/linearLayout">
-
+            android:id="@+id/top_navigation_container">
 
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="My Day"
+                android:text="@string/bt_my_day"
                 android:onClick="myDay"
-                android:id="@+id/button"
+                android:id="@+id/bt_my_day"
                 android:layout_marginLeft = "8dip"
                 style="@style/blue_button" />
 
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="Stats"
-                android:id="@+id/button"
+                android:text="@string/bt_stats"
+                android:id="@+id/bt_stats"
                 android:onClick="myStats"
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
@@ -78,20 +79,19 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="Friends"
-                android:id="@+id/button"
+                android:text="@string/bt_friends"
+                android:id="@+id/bt_friends"
                 android:layout_marginRight = "8dip"
                 style="@style/gray_button" />
-
 
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Items you've picked so far:"
-            android:layout_below="@+id/linearLayout"
-            android:id="@+id/textView4"
+            android:text="@string/sub_text_3"
+            android:layout_below="@+id/top_navigation_container"
+            android:id="@+id/sub_text_3"
             android:layout_marginLeft = "8dip"
             android:layout_marginRight = "8dip"
             android:layout_marginTop = "15dip"
@@ -102,7 +102,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView4"
+            android:layout_below="@+id/sub_text_3"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:orientation="vertical"
@@ -351,10 +351,11 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_below="@+id/item_picks"
+            android:id="@+id/all_items_container"
+            android:layout_marginTop = "15dip"
+            android:paddingBottom="15dp"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
-            android:paddingBottom="15dp"
-            android:paddingTop="15dp"
             android:background="#000"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
@@ -362,14 +363,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add more from the items bellow:"
+                android:text="@string/sub_text_1"
                 android:id="@+id/textView3"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
+                android:layout_marginTop = "15dip"
                 android:textColor="#2d9dfb"
                 android:textSize="22sp" />
-
-
 
             <!-- 1 row of 2 buttons with text and icon starts -->
             <LinearLayout
@@ -377,7 +377,7 @@
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "15dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/linearLayout">
+                android:baselineAligned="false">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -385,20 +385,20 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginRight = "4dip">
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/item_icon_1"
+                        android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
                         android:background="#952336"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
-                        android:text="Happy"
+                        android:text="@string/item_text"
                         android:textColor="#952336"
-                        android:id="@+id/button" />
+                        android:id="@+id/item_text_1" />
 
                 </LinearLayout>
 
@@ -408,20 +408,20 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginRight = "4dip">
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/item_icon_2"
+                        android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
                         android:background="#952336"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
-                        android:text="Happy"
+                        android:text="@string/item_text"
                         android:textColor="#952336"
-                        android:id="@+id/button" />
+                        android:id="@+id/item_text_2" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -432,8 +432,8 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "10dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/linearLayout">
+                android:baselineAligned="false"
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -441,20 +441,20 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginRight = "4dip">
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/item_icon_3"
+                        android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
                         android:background="#952336"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
-                        android:text="Happy"
+                        android:text="@string/item_text"
                         android:textColor="#952336"
-                        android:id="@+id/button" />
+                        android:id="@+id/item_text_3" />
 
                 </LinearLayout>
 
@@ -464,20 +464,20 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginRight = "4dip">
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/item_icon_4"
+                        android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
                         android:background="#952336"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
-                        android:text="Happy"
+                        android:text="@string/item_text"
                         android:textColor="#952336"
-                        android:id="@+id/button" />
+                        android:id="@+id/item_text_4" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -488,65 +488,59 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "10dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/linearLayout">
+                android:baselineAligned="false"
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:orientation="horizontal"
-                    android:layout_width="fill_parent"
+                    android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginRight = "4dip">
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/item_icon_5"
+                        android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
                         android:background="#952336"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
-                        android:text="Happy"
+                        android:text="@string/item_text"
                         android:textColor="#952336"
-                        android:id="@+id/button" />
+                        android:id="@+id/item_text_5" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    style="@style/row_with_one_item">
 
-
+                    <!-- row with only one button -->
 
                 </LinearLayout>
             </LinearLayout>
             <!-- 1 row of 2 buttons with text and icon ends -->
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_marginTop = "15dp"
-            android:layout_marginBottom = "15dp"
-            android:layout_height="1dp"
-            android:background="#20FFFFFF"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:id="@+id/linearLayout">
-        </LinearLayout>
-
-            <!-- 1 row of 2 buttons with text and icon starts -->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/linearLayout">
+                android:layout_marginTop = "15dp"
+                android:layout_height="1dp"
+                android:background="#20FFFFFF"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:id="@+id/divider">
+            </LinearLayout>
+
+            <!-- Remove & Add More Items -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_marginTop = "15dp"
+                android:baselineAligned="false"
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -554,14 +548,12 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginRight = "4dip">
 
                     <Button
                         android:layout_width="fill_parent"
-                        android:layout_weight="1"
-                        android:text="Edit or Remove"
-                        android:id="@+id/button"
+                        android:text="@string/remove_items"
+                        android:id="@+id/remove_items"
                         android:onClick="myStats"
                         style="@style/gray_button" />
 
@@ -573,20 +565,18 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:id="@+id/linearLayout">
+                    android:layout_marginRight = "4dip">
 
                     <Button
                         android:layout_width="fill_parent"
-                        android:layout_weight="1"
-                        android:text="Add More Items"
-                        android:id="@+id/button"
+                        android:text="@string/add_more_items"
+                        android:id="@+id/add_more_items"
                         android:onClick="myStats"
                         style="@style/gray_button" />
 
                 </LinearLayout>
             </LinearLayout>
-            <!-- 1 row of 2 buttons with text and icon ends -->
+            <!--Remove & Add More Items -->
 
         </LinearLayout>
 
