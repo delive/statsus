@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_below="@+id/textView3"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="8dip"
+              android:layout_marginRight="8dip"
+              android:layout_marginTop="10dp"
+              android:id="@+id/linearLayout1">
+
+    <ImageButton
+            android:id="@+id/stat_row_icon"
+            android:src="@drawable/uicons_smiley"
+            style="@style/uicon_container"/>
+
+    <Button
+            style="@style/uicon_whitebg_text"
+            android:text="stat type"
+            android:textColor="#c82d2f"
+            android:layout_width="match_parent"
+            android:id="@+id/stat_button"/>
+
+    <ImageButton
+            android:id="@+id/imageButton"
+            android:src="@drawable/note_na"
+            style="@style/note_container"/>
+
+    <Button
+            style="@style/uicon_value_5"
+            android:text="5"
+            android:textColor="#FFF"
+            android:id="@+id/stat_value_button"/>
+
+</LinearLayout>

@@ -232,18 +232,12 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true">
 
-            <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#0d0d0d"
-                    android:id="@+id/stat_category_container" />
-
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pick from the items below:"
-                    android:id="@+id/textView3"
+                    android:id="@+id/submit_pickItemsBelow"
+                    android:visibility="gone"
                     android:layout_marginLeft="4dip"
                     android:layout_marginRight="4dip"
                     android:layout_marginTop="10dip"
@@ -251,12 +245,20 @@
                     android:textSize="22sp"/>
 
             <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#0d0d0d"
+                    android:id="@+id/home_content_container" />
+
+            <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="fill_parent"
                     android:layout_marginTop="15dp"
                     android:layout_height="wrap_content"
                     android:background="#0d0d0d"
-                    android:id="@+id/linearLayout">
+                    android:visibility="gone"
+                    android:id="@+id/footerButton_addStats">
 
                 <LinearLayout
                         android:orientation="horizontal"
@@ -294,6 +296,34 @@
                             android:text="Add More Items"
                             android:id="@+id/button"
                             android:onClick="addMoreItems"
+                            style="@style/gray_button"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="wrap_content"
+                    android:background="#0d0d0d"
+                    android:id="@+id/footerButton_summary">
+
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginRight="4dip"
+                        android:background="#0d0d0d">
+
+                    <Button
+                            android:layout_width="fill_parent"
+                            android:layout_weight="1"
+                            android:text="Add More Items"
+                            android:onClick="viewModeAddStats"
                             style="@style/gray_button"/>
 
                 </LinearLayout>

@@ -160,7 +160,7 @@ public class LocalPersistenceManager {
         db.close();
     }
 
-    public static Collection<Stat> getCompletedStatsForToday(final Date date, final Context context) {
+    public static Collection<Stat> getCompletedStatsTypesForToday(final Date date, final Context context) {
         final SQLiteDatabase db = getReadableDb(context);
 
         final Cursor c =
@@ -175,6 +175,31 @@ public class LocalPersistenceManager {
             stats.add(Stat.getStatFromId(sid));
             c.moveToNext();
         }
+        return stats;
+    }
+
+    public static List<SqlStatContainer> getCompletedStatContainersForToday(final Date date, final Context context) {
+        final SQLiteDatabase db = getReadableDb(context);
+        final List<SqlStatContainer> stats = new ArrayList<SqlStatContainer>();
+
+        final Cursor c =
+                db.rawQuery("select * from " + StatContentSql.TABLE_NAME + " where date = '" + DATE_FORMAT.format(date) + "'", null);
+        if (!c.moveToFirst()) {
+            return Collections.EMPTY_LIST;
+        }
+        while (!c.isAfterLast()) {
+            final int sid = c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_STAT_ID));
+            final int uid = c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_USER_ID));
+            final String dateString = c.getString(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_DATE));
+            final int val = c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_VAL));
+
+            final SqlStatContainer stat = new SqlStatContainer(sid, uid, dateString, val);
+            stats.add(stat);
+            c.moveToNext();
+        }
+        c.close();
+        db.close();
+
         return stats;
     }
 
@@ -224,6 +249,22 @@ public class LocalPersistenceManager {
         @Override
         public String toString() {
             return String.format("StatId: %d, UserId: %d, Date: %s, StatVal: %d", this.sid, this.uid, this.dateString, this.val);
+        }
+
+        public int getSid() {
+            return sid;
+        }
+
+        public int getUid() {
+            return uid;
+        }
+
+        public String getDateString() {
+            return dateString;
+        }
+
+        public int getVal() {
+            return val;
         }
     }
 }

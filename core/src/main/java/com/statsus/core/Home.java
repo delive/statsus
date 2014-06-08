@@ -11,7 +11,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import com.statsus.core.metadata.Stat;
+import com.statsus.core.metadata.ViewMode;
 import com.statsus.core.persistence.LocalPersistenceManager;
+import com.statsus.core.persistence.LocalPersistenceManager.SqlStatContainer;
 
 import android.content.Context;
 import android.content.Intent;
@@ -28,7 +30,8 @@ public class Home
 
     //TODO implement users
     public static long UID = 0;
-    private Date date = new Date();
+    private Date date;
+    private ViewMode viewMode;
 
     final Set<Stat> selectedStats = new HashSet<Stat>();
     final Map<Stat, Button> statValues = new HashMap<Stat, Button>();
@@ -37,14 +40,67 @@ public class Home
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_1_first_login);
-        initStatCategories();
+        initHomePage();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        initHomePage();
+    }
+
+    @Override
+    public void myDay(View v) {
+        this.viewMode = null;
+        onResume();
+    }
+
+
+    private void initHomePage() {
         checkAndSetDate();
-        initStatCategories();
+        resetViews();
+
+        final List<SqlStatContainer> statContainers =
+                LocalPersistenceManager.getCompletedStatContainersForToday(this.date, getApplicationContext());
+
+        if (statContainers.size() > 0 && this.viewMode != ViewMode.AddStat) {
+            // show summary page if we have stats completed today & we aren't explicitly trying to add more stats
+            initSummaryPage(statContainers);
+        }
+        else {
+            initStatCategories();
+        }
+    }
+
+    private void resetViews() {
+        findViewById(R.id.submit_pickItemsBelow).setVisibility(View.GONE);
+        findViewById(R.id.cancelSubmitDailyStats).setVisibility(View.GONE);
+        findViewById(R.id.footerButton_addStats).setVisibility(View.GONE);
+        findViewById(R.id.footerButton_summary).setVisibility(View.GONE);
+    }
+
+    private void initSummaryPage(final List<SqlStatContainer> statContainers) {
+        findViewById(R.id.footerButton_summary).setVisibility(View.VISIBLE);
+        final LinearLayout contentAreaLl = (LinearLayout) findViewById(R.id.home_content_container);
+        contentAreaLl.removeAllViews();
+
+        for (final SqlStatContainer cont : statContainers) {
+            final LinearLayout rowLl =
+                    (LinearLayout) getLayoutInflater().inflate(R.layout.stat_summary_row, contentAreaLl, false);
+            final ImageButton iconButton = (ImageButton) rowLl.findViewById(R.id.stat_row_icon);
+            final Button textButton = (Button) rowLl.findViewById(R.id.stat_button);
+            //todo add note lookup
+            final Button valueButton = (Button) rowLl.findViewById(R.id.stat_value_button);
+
+            final Stat stat = Stat.getStatFromId(cont.getSid());
+
+            stat.setStatImageProperties(iconButton);
+            stat.setTextProperties(textButton);
+            stat.setBackgroundResource(valueButton);
+            valueButton.setText(Integer.toString(cont.getVal()));
+
+            contentAreaLl.addView(rowLl);
+        }
     }
 
     private void checkAndSetDate() {
@@ -54,27 +110,24 @@ public class Home
         }
     }
 
-    /**
-     * already on this page, just re-init content in case
-     */
-    @Override
-    public void myDay(View v) {
-        onResume();
-    }
-
     public void cancelDailyStats(View v) {
         this.selectedStats.clear();
         ((LinearLayout)findViewById(R.id.selectedStats)).removeAllViews();
         findViewById(R.id.cancelSubmitDailyStats).setVisibility(View.GONE);
 
-        this.initStatCategories();
+        initHomePage();
     }
 
     /**
      * Builds the 2 column multi rowed stat category layout from stats selected by the user
      */
     private void initStatCategories() {
-        final LinearLayout statContainer = (LinearLayout) findViewById(R.id.stat_category_container);
+        findViewById(R.id.submit_pickItemsBelow).setVisibility(View.VISIBLE);
+        findViewById(R.id.footerButton_addStats).setVisibility(View.VISIBLE);
+        if (this.selectedStats.size() > 0) {
+            findViewById(R.id.cancelSubmitDailyStats).setVisibility(View.VISIBLE);
+        }
+        final LinearLayout statContainer = (LinearLayout) findViewById(R.id.home_content_container);
         final LinearLayout selectedStatsLl = (LinearLayout) findViewById(R.id.selectedStats);
         statContainer.removeAllViews();
 
@@ -103,7 +156,6 @@ public class Home
             colCount++;
         }
 
-
         if (((stats.size() - this.selectedStats.size()) & 1) != 0) {
             // odd number of categories, need to inflate an empty col
             final LinearLayout col =
@@ -115,7 +167,7 @@ public class Home
     private Collection<Stat> getValidStatsForToday() {
         final Context context = getApplicationContext();
         final List<Stat> validStats = new ArrayList<Stat>(LocalPersistenceManager.getUserSelectedStats(context));
-        final Collection<Stat> statsCompletedToday = LocalPersistenceManager.getCompletedStatsForToday(this.date, context);
+        final Collection<Stat> statsCompletedToday = LocalPersistenceManager.getCompletedStatsTypesForToday(this.date, context);
         for (final Stat stat : statsCompletedToday) {
             validStats.remove(stat);
         }
@@ -128,6 +180,7 @@ public class Home
             @Override
             public void onClick(final View view) {
                 if (Home.this.selectedStats.size() == 0) {
+                    // first selection of a stat - show the cancel / submit pane
                     findViewById(R.id.cancelSubmitDailyStats).setVisibility(View.VISIBLE);
                 }
                 if (!Home.this.selectedStats.contains(stat)) {
@@ -139,7 +192,7 @@ public class Home
 
                     selectedStatsLl.addView(row);
                     Home.this.selectedStats.add(stat);
-                    initStatCategories();
+                    initHomePage();
                 }
             }
         };
@@ -207,11 +260,17 @@ public class Home
 
             LocalPersistenceManager.addStat(statButton.getKey(), val, UID, new Date(), getApplicationContext());
         }
+        this.viewMode = ViewMode.StatSummary;
         cancelDailyStats(null);
     }
 
     public void addMoreItems(View v) {
         startActivity(new Intent(this, Categories.class));
+    }
+
+    public void viewModeAddStats(View v) {
+        this.viewMode = ViewMode.AddStat;
+        initHomePage();
     }
 
     public void editOrRemove(View v) {

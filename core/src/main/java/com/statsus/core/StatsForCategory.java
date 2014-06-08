@@ -20,6 +20,7 @@ import android.widget.TextView;
  */
 public class StatsForCategory
         extends ActivityWithBanner {
+
     private Category category;
 
     @Override
@@ -40,7 +41,7 @@ public class StatsForCategory
     }
 
     private void initStats() {
-        final LinearLayout statContainer = (LinearLayout) findViewById(R.id.stat_category_container);
+        final LinearLayout statContainer = (LinearLayout) findViewById(R.id.home_content_container);
 
         int colCount = 0;
         // init the first row

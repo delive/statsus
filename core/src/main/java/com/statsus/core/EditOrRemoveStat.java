@@ -34,7 +34,7 @@ public class EditOrRemoveStat
      * Builds the 2 column multi rowed stat category layout from stats selected by the user
      */
     private void initStatCategories() {
-        final LinearLayout statContainer = (LinearLayout) findViewById(R.id.stat_category_container);
+        final LinearLayout statContainer = (LinearLayout) findViewById(R.id.home_content_container);
 
         int colCount = 0;
         // init the first row

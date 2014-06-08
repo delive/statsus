@@ -141,7 +141,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="#0d0d0d"
-                    android:id="@+id/stat_category_container" />
+                    android:id="@+id/home_content_container" />
 
 
             <LinearLayout

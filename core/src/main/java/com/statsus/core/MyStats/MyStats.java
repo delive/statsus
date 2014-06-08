@@ -33,7 +33,7 @@ public class MyStats extends Activity {
 
         final StringBuilder sb = new StringBuilder();
         for (final SqlStatContainer stat : stats) {
-            sb.append(stat);
+            sb.append(stat).append("\n");
         }
         textView.setText(sb.toString());
     }
