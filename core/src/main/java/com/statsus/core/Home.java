@@ -1,6 +1,8 @@
 package com.statsus.core;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
@@ -18,19 +20,27 @@ import com.statsus.core.persistence.LocalPersistenceManager.SqlStatContainer;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 public class Home
         extends ActivityWithBanner {
 
+    private static final String LOGTAG = "Home";
+    public static final int DAY_INCRMENT = (1000 * 60 * 60 * 24);
+    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MMMM dd yyyy");
+
     //TODO implement users
     public static long UID = 0;
+
     private Date date;
+    private Date realDate;
     private ViewMode viewMode;
 
     final Set<Stat> selectedStats = new HashSet<Stat>();
@@ -52,24 +62,27 @@ public class Home
     @Override
     public void myDay(View v) {
         this.viewMode = null;
+        this.date = null;
         onResume();
     }
 
-
     private void initHomePage() {
-        checkAndSetDate();
+        checkAndSetViewModeAndDate();
         resetViews();
 
         final List<SqlStatContainer> statContainers =
                 LocalPersistenceManager.getCompletedStatContainersForToday(this.date, getApplicationContext());
 
-        if (statContainers.size() > 0 && this.viewMode != ViewMode.AddStat) {
-            // show summary page if we have stats completed today & we aren't explicitly trying to add more stats
-            initSummaryPage(statContainers);
-        }
-        else {
+        if (isDailySubmitAllowed() && (this.viewMode == ViewMode.AddStat || statContainers.size() == 0)) {
             initStatCategories();
         }
+        else {
+            initSummaryPage(statContainers);
+        }
+    }
+
+    private boolean isDailySubmitAllowed() {
+        return viewDateIsYesterday() || viewDateIsCurrentDate();
     }
 
     private void resetViews() {
@@ -103,11 +116,23 @@ public class Home
         }
     }
 
-    private void checkAndSetDate() {
-        final Date currentDate = new Date();
-        if (this.date != currentDate) {
-            this.date = currentDate;
+    private void checkAndSetViewModeAndDate() {
+        this.realDate = new Date();
+        if (this.viewMode == null) {
+            this.viewMode = ViewMode.Default;
         }
+        if (this.date == null) {
+            this.date = this.realDate;
+        }
+
+        final View nextDay = findViewById(R.id.nextDay);
+        if (viewDateIsCurrentDate()) {
+            nextDay.setVisibility(View.GONE);
+        }
+        else {
+            nextDay.setVisibility(View.VISIBLE);
+        }
+        ((TextView) findViewById(R.id.date)).setText(DATE_FORMAT.format(this.date));
     }
 
     public void cancelDailyStats(View v) {
@@ -255,10 +280,14 @@ public class Home
     }
 
     public void submitDailyStats(View v) {
+        if (!viewDateIsYesterday() && !viewDateIsCurrentDate()) {
+            Log.w("trying to submit stats for an old day:" + this.date, LOGTAG);
+            return;
+        }
         for (final Entry<Stat, Button> statButton : this.statValues.entrySet()) {
             final int val = Integer.valueOf(statButton.getValue().getText().toString());
 
-            LocalPersistenceManager.addStat(statButton.getKey(), val, UID, new Date(), getApplicationContext());
+            LocalPersistenceManager.addStat(statButton.getKey(), val, UID, this.date, getApplicationContext());
         }
         this.viewMode = ViewMode.StatSummary;
         cancelDailyStats(null);
@@ -271,6 +300,42 @@ public class Home
     public void viewModeAddStats(View v) {
         this.viewMode = ViewMode.AddStat;
         initHomePage();
+    }
+
+    public void nextDay(View v) {
+        this.date = new Date(this.date.getTime() + DAY_INCRMENT);
+        if (viewDateIsCurrentDate() || viewDateIsYesterday()) {
+            // if the next day is today or yesterday, go back to default view
+            this.viewMode = ViewMode.Default;
+        }
+        initHomePage();
+    }
+
+    public void previousDay(View v) {
+        this.date = new Date(this.date.getTime() - DAY_INCRMENT);
+        if (viewDateIsYesterday()) {
+            // if the next day is today or yesterday, go back to default view
+            this.viewMode = ViewMode.Default;
+        }
+        initHomePage();
+    }
+
+    private boolean viewDateIsYesterday() {
+        final Calendar cal1 = Calendar.getInstance();
+        final Calendar cal2 = Calendar.getInstance();
+        cal1.setTime(this.date);
+        cal2.setTime(new Date(this.realDate.getTime() - DAY_INCRMENT));
+        return cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+                cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR);
+    }
+
+    private boolean viewDateIsCurrentDate() {
+        final Calendar cal1 = Calendar.getInstance();
+        final Calendar cal2 = Calendar.getInstance();
+        cal1.setTime(this.date);
+        cal2.setTime(this.realDate);
+        return cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+                cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR);
     }
 
     public void editOrRemove(View v) {

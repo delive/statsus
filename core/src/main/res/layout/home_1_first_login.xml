@@ -108,29 +108,31 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="December 12th 2014"
+                    android:text="date"
                     android:textColor="#FFF"
                     android:textSize="18sp"
-                    android:id="@+id/textView"
+                    android:id="@+id/date"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"/>
 
             <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/nextDay"
                     android:src="@drawable/arrow_right"
                     android:scaleType="fitCenter"
                     android:adjustViewBounds="true"
                     android:layout_marginRight="8dip"
+                    android:onClick="nextDay"
                     style="@style/white_button"
-                    android:layout_alignTop="@+id/imageButton"
+                    android:layout_alignTop="@+id/previousDay"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"/>
 
 
             <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/previousDay"
                     android:src="@drawable/arrow_left"
                     android:scaleType="fitCenter"
+                    android:onClick="previousDay"
                     android:adjustViewBounds="true"
                     android:layout_marginLeft="8dip"
                     style="@style/white_button"
