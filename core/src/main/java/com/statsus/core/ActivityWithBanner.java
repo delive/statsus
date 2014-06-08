@@ -1,6 +1,5 @@
 package com.statsus.core;
 
-import com.statsus.core.mystats.MyStats;
 import com.statsus.core.persistence.LocalPersistenceManager;
 
 import android.app.Activity;

@@ -156,7 +156,8 @@
                 <Button
                     android:text="4"
                     android:textColor="#FFF"
-                    android:alpha="0.8"android:id="@+id/button"
+                    android:alpha="0.8"
+                    android:id="@+id/button"
                     android:background="#952336"
                     style="@style/colored_squared" />
                 <ImageButton

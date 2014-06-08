@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mystats.MyStats" />
+        <activity android:name=".MyStats" />
         <activity android:name=".Categories" />
         <activity android:name=".StatsForCategory" />
         <activity android:name=".Friends" />

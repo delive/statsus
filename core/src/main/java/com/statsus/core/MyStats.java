@@ -1,8 +1,7 @@
-package com.statsus.core.mystats;
+package com.statsus.core;
 
 import java.util.List;
 
-import com.statsus.core.R;
 import com.statsus.core.persistence.LocalPersistenceManager;
 import com.statsus.core.persistence.LocalPersistenceManager.SqlStatContainer;
 
