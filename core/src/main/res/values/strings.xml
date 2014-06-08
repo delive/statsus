@@ -27,6 +27,7 @@
     <string name="item_name">Name of your item</string>
     <string name="change_icon">Change Icon</string>
     <string name="change_color">Change Color</string>
+    <string name="change_item">Change Item</string>
     <string name="cancel">Cancel</string>
     <string name="edit">Edit</string>
     <string name="remove">Remove</string>
@@ -40,7 +41,29 @@
     <string name="default_numeric_value">5</string>
     <string name="category_title">Category Title</string>
     <string name="currently_viewing">Currently Viewing:</string>
-
+    <string name="currently_viewing_stats_for">Currently Viewing Stats For:</string>
+    <string name="value1">1</string>
+    <string name="value2">2</string>
+    <string name="value3">3</string>
+    <string name="value4">4</string>
+    <string name="custom_value">Custom Value</string>
+    <string name="pick_icon">Pick an Icon</string>
+    <string name="pick_color">Pick a Color</string>
+    <string name="add_item">Add Item</string>
+    <string name="viewing_item">Sports</string>
+    <string name="single_items">Single Items</string>
+    <string name="item_groups">Groups of Items</string>
+    <string name="intersecting_items">Intersecting Items</string>
+    <string name="single_items_subtext">View all the available statistics on a single item at a time.</string>
+    <string name="item_groups_subtext">You can combine items of the same type into groups and view both individual and group stats (ex: tennis and football can be combined into sports).</string>
+    <string name="intersecting_items_subtext">View statistics for items that occur often on the same day (ex: video games and happy may often appear on the same day).</string>
+    <string name="single_items_bt">View Stats for Single Items</string>
+    <string name="item_groups_bt">View Stats for Groups of Items</string>
+    <string name="intersecting_items_bt">View Stats for Intersecting Items</string>
+    <string name="week">Week</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="custom">Custom</string>
 
 
 

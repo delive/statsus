@@ -104,8 +104,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Single Items"
-                android:id="@+id/textView3"
+                android:text="@string/single_items"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
                 android:textColor="#2d9dfb"
@@ -115,8 +114,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="View all the available statistics on a single item at a time."
-                android:id="@+id/textView3"
+                android:text="@string/single_items_subtext"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
                 android:textColor="#FFF"
@@ -125,7 +123,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="View Stats for Single Items"
+                android:text="@string/single_items_bt"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
                 android:layout_marginTop="10dp"
@@ -151,8 +149,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Groups of Items"
-                android:id="@+id/textView3"
+                android:text="@string/item_groups"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
                 android:textColor="#2d9dfb"
@@ -162,8 +159,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="You can combine items of the same type into groups and view both individual and group stats (ex: tennis and football can be combined into sports)."
-                android:id="@+id/textView3"
+                android:text="@string/item_groups_subtext"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
                 android:textColor="#FFF"
@@ -172,11 +168,11 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="View Stats for Groups of Items"
+                android:text="@string/item_groups_bt"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
                 android:layout_marginTop="10dp"
-                android:id="@+id/button"
+                android:id="@+id/item_groups_bt"
                 android:onClick="myStats"
                 style="@style/blue_button" />
 
@@ -188,8 +184,7 @@
                 android:layout_height="1dp"
                 android:background="#20FFFFFF"
                 android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
-                android:id="@+id/linearLayout">
+                android:layout_marginRight="4dp">
             </LinearLayout>
 
 
@@ -197,8 +192,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Intersecting Items"
-                android:id="@+id/textView3"
+                android:text="@string/intersecting_items"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
                 android:textColor="#2d9dfb"
@@ -208,8 +202,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="View statistics for items that occur often on the same day (ex: video games and happy may often appear on the same day)."
-                android:id="@+id/textView3"
+                android:text="@string/intersecting_items_subtext"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
                 android:textColor="#FFF"
@@ -218,11 +211,11 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="View Stats for Intersecting Items"
+                android:text="@string/intersecting_items_bt"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
                 android:layout_marginTop="10dp"
-                android:id="@+id/button"
+                android:id="@+id/intersecting_items_bt"
                 android:onClick="myStats"
                 style="@style/blue_button" />
 

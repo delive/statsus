@@ -99,8 +99,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Currently Viewing Stats For:"
-                android:id="@+id/textView3"
+                android:text="@string/currently_viewing_stats_for"
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
                 android:textColor="#2d9dfb"
@@ -110,6 +109,7 @@
 
         <!-- 1 row of 2 buttons with text and icon starts -->
         <LinearLayout
+            android:baselineAligned="false"
             android:orientation="horizontal"
             android:layout_below="@+id/title"
             android:layout_width="fill_parent"
@@ -123,20 +123,20 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft = "8dip"
-                android:layout_marginRight = "4dip"
-                android:id="@+id/linearLayout">
+                android:layout_marginRight = "4dip">
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/item_icon_1"
+                    android:contentDescription="@string/item_icon"
                     android:src="@drawable/uicons_smiley"
                     android:background="#952336"
                     style="@style/colored_squared" />
 
                 <Button
                     style="@style/uicon_text"
-                    android:text="Happy"
+                    android:text="@string/item_text"
                     android:textColor="#952336"
-                    android:id="@+id/button" />
+                    android:id="@+id/item_text" />
 
             </LinearLayout>
 
@@ -151,11 +151,10 @@
 
                 <Button
                     android:layout_width="fill_parent"
-                    android:layout_weight="1"
-                    android:text="Change Item"
+                    android:text="@string/change_item"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:id="@+id/button"
+                    android:id="@+id/change_item"
                     android:onClick="myStats"
                     style="@style/gray_button" />
 
@@ -172,7 +171,6 @@
             android:paddingBottom="15dp"
             android:layout_height="wrap_content"
             android:background="#000"
-            android:layout_below="@+id/imageButton"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:id="@+id/time_period">
@@ -181,16 +179,16 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="Week"
-                android:id="@+id/button"
+                android:text="@string/week"
+                android:id="@+id/week"
                 android:layout_marginLeft = "8dip"
                 style="@style/gray_button" />
 
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="Month"
-                android:id="@+id/button"
+                android:text="@string/month"
+                android:id="@+id/month"
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
                 style="@style/blue_button" />
@@ -198,41 +196,22 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="Year"
-                android:id="@+id/button"
+                android:text="@string/year"
+                android:id="@+id/year"
                 android:layout_marginRight = "8dip"
                 style="@style/gray_button" />
 
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
-                android:text="Custom"
-                android:id="@+id/button"
+                android:text="@string/custom"
+                android:id="@+id/custom"
                 android:layout_marginRight = "8dip"
                 style="@style/gray_button" />
 
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_below="@+id/time_period"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/my_stats">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Currently Viewing Stats For:"
-                android:id="@+id/textView3"
-                android:layout_marginLeft = "8dip"
-                android:layout_marginRight = "8dip"
-                android:textColor="#2d9dfb"
-                android:textSize="14sp" />
-        </LinearLayout>
 
 
 
