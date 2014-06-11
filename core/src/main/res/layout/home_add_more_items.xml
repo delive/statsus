@@ -60,15 +60,13 @@
                 android:layout_weight="1"
                 android:text="My Day"
                 android:onClick="myDay"
-                android:id="@+id/button"
-                android:layout_marginLeft = "8dip"
+                android:layout_marginLeft="8dip"
                 style="@style/blue_button" />
 
             <Button
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
                 android:text="Stats"
-                android:id="@+id/button"
                 android:onClick="myStats"
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
@@ -79,7 +77,6 @@
                 android:layout_weight="1"
                 android:text="Friends"
                 android:onClick="myFriends"
-                android:id="@+id/button"
                 android:layout_marginRight = "8dip"
                 style="@style/gray_button" />
 
@@ -151,8 +148,7 @@
                           android:layout_height="1dp"
                           android:background="#20FFFFFF"
                           android:layout_marginLeft="4dp"
-                          android:layout_marginRight="4dp"
-                          android:id="@+id/linearLayout">
+                          android:layout_marginRight="4dp">
                   </LinearLayout>
 
             <!-- add new and my items -->
@@ -161,16 +157,14 @@
                     android:layout_width="fill_parent"
                     android:layout_marginTop="15dp"
                     android:layout_height="wrap_content"
-                    android:background="#0d0d0d"
-                    android:id="@+id/linearLayout">
+                    android:background="#0d0d0d">
 
                 <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="fill_parent"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:background="#0d0d0d"
-                        android:id="@+id/linearLayout">
+                        android:background="#0d0d0d">
 
                     <Button
                             android:layout_width="fill_parent"
@@ -178,7 +172,6 @@
                             android:text="Add New"
                             android:layout_marginLeft="4dip"
                             android:layout_marginRight="4dip"
-                            android:id="@+id/button"
                             android:onClick="addNewStat"
                             style="@style/blue_button"/>
                 </LinearLayout>

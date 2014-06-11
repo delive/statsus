@@ -1,12 +1,14 @@
 package com.statsus.core;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 import com.statsus.core.metadata.Stat;
 import com.statsus.core.persistence.LocalPersistenceManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -27,6 +29,17 @@ public class EditOrRemoveStat
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_1_first_login_remove_items);
+
+        final Date dateFromIntent = (Date) getIntent().getSerializableExtra("date");
+        if (dateFromIntent != null) {
+            this.date = dateFromIntent;
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        checkAndSetDate();
         initStatCategories();
     }
 
@@ -34,7 +47,10 @@ public class EditOrRemoveStat
      * Builds the 2 column multi rowed stat category layout from stats selected by the user
      */
     private void initStatCategories() {
+        super.checkAndSetDate();
+
         final LinearLayout statContainer = (LinearLayout) findViewById(R.id.home_content_container);
+        statContainer.removeAllViews();
 
         int colCount = 0;
         // init the first row
@@ -104,5 +120,23 @@ public class EditOrRemoveStat
                 statsToRemove.remove(stat);
             }
         };
+    }
+
+    @Override
+    public void nextDay(View v) {
+        super.nextDay(v);
+        final Intent intent = new Intent(v.getContext(), Home.class);
+        intent.putExtra("date", this.date);
+        Util.setIntentFlagNoHistory(intent);
+        startActivity(intent);
+    }
+
+    @Override
+    public void previousDay(View v) {
+        super.previousDay(v);
+        final Intent intent = new Intent(v.getContext(), Home.class);
+        intent.putExtra("date", this.date);
+        Util.setIntentFlagNoHistory(intent);
+        startActivity(intent);
     }
 }

@@ -138,34 +138,34 @@
                     android:text="@string/value1"
                     android:textColor="#FFF"
                     android:alpha="0.2"
-                    android:id="@+id/1value1"
+                    android:id="@+id/value11"
                     android:background="#952336"
                     style="@style/colored_squared" />
                 <Button
                     android:text="@string/value2"
                     android:textColor="#cccccc"
-                    android:id="@+id/1value2"
+                    android:id="@+id/value12"
                     android:background="#FFF"
                     style="@style/colored_squared" />
                 <Button
                     android:text="@string/value3"
                     android:textColor="#FFF"
                     android:alpha="0.6"
-                    android:id="@+id/1value3"
+                    android:id="@+id/value13"
                     android:background="#952336"
                     style="@style/colored_squared" />
                 <Button
                     android:text="@string/value4"
                     android:textColor="#FFF"
                     android:alpha="0.8"
-                    android:id="@+id/1value4"
+                    android:id="@+id/value14"
                     android:background="#952336"
                     style="@style/colored_squared" />
                 <ImageButton
                     android:src="@drawable/custom_value_white"
                     android:textColor="#FFF"
                     android:contentDescription="@string/custom_value"
-                    android:id="@+id/1value_custom"
+                    android:id="@+id/value_custom1"
                     android:padding="3dp"
                     android:background="#952336"
                     style="@style/colored_squared" />
@@ -201,34 +201,34 @@
                     android:text="@string/value1"
                     android:textColor="#FFF"
                     android:alpha="0.2"
-                    android:id="@+id/2value1"
+                    android:id="@+id/value21"
                     android:background="#952336"
                     style="@style/colored_squared" />
                 <Button
                     android:text="@string/value2"
                     android:textColor="#FFF"
                     android:alpha="0.4"
-                    android:id="@+id/2value2"
+                    android:id="@+id/value22"
                     android:background="#952336"
                     style="@style/colored_squared" />
                 <Button
                     android:text="@string/value3"
                     android:textColor="#FFF"
                     android:alpha="0.6"
-                    android:id="@+id/2value3"
+                    android:id="@+id/value23"
                     android:background="#952336"
                     style="@style/colored_squared" />
                 <Button
                     android:text="@string/value4"
                     android:textColor="#cccccc"
-                    android:id="@+id/2value4"
+                    android:id="@+id/value24"
                     android:background="#FFF"
                     style="@style/colored_squared" />
                 <ImageButton
                     android:src="@drawable/custom_value_white"
                     android:contentDescription="@string/custom_value"
                     android:textColor="#FFF"
-                    android:id="@+id/2value_custom"
+                    android:id="@+id/value_custom2"
                     android:padding="3dp"
                     android:background="#952336"
                     style="@style/colored_squared" />
@@ -264,34 +264,34 @@
                     android:text="@string/value1"
                     android:textColor="#FFF"
                     android:alpha="0.2"
-                    android:id="@+id/3value1"
+                    android:id="@+id/value31"
                     android:background="#952336"
                     style="@style/colored_squared" />
                 <Button
                     android:text="@string/value2"
                     android:textColor="#FFF"
                     android:alpha="0.4"
-                    android:id="@+id/3value2"
+                    android:id="@+id/value32"
                     android:background="#952336"
                     style="@style/colored_squared" />
                 <Button
                     android:text="@string/value3"
                     android:textColor="#FFF"
                     android:alpha="0.6"
-                    android:id="@+id/3value3"
+                    android:id="@+id/value33"
                     android:background="#952336"
                     style="@style/colored_squared" />
                 <Button
                     android:text="@string/value4"
                     android:textColor="#FFF"
                     android:alpha="0.8"
-                    android:id="@+id/3value4"
+                    android:id="@+id/value34"
                     android:background="#952336"
                     style="@style/colored_squared" />
                 <ImageButton
                     android:src="@drawable/custom_value_gray"
                     android:contentDescription="@string/custom_value"
-                    android:id="@+id/3value_custom"
+                    android:id="@+id/value_custom3"
                     android:padding="3dp"
                     android:background="#FFF"
                     style="@style/colored_squared" />

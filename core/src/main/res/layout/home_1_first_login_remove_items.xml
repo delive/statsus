@@ -31,7 +31,7 @@
             android:src="@drawable/logo_statsus" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/settings"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight = "8dip"
@@ -50,10 +50,10 @@
             android:paddingBottom="10dp"
             android:layout_height="wrap_content"
             android:background="#0d0d0d"
-            android:layout_below="@+id/imageButton"
+            android:layout_below="@+id/settings"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/linearLayout">
+            android:id="@+id/menuBar">
 
 
             <Button
@@ -61,7 +61,6 @@
                 android:layout_weight="1"
                 android:text="My Day"
                 android:onClick="myDay"
-                android:id="@+id/button"
                 android:layout_marginLeft = "8dip"
                 style="@style/blue_button" />
 
@@ -69,7 +68,6 @@
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
                 android:text="Stats"
-                android:id="@+id/button"
                 android:onClick="myStats"
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
@@ -79,7 +77,6 @@
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
                 android:text="Friends"
-                android:id="@+id/button"
                 android:onClick="myFriends"
                 android:layout_marginRight = "8dip"
                 style="@style/gray_button" />
@@ -88,59 +85,60 @@
         </LinearLayout>
 
         <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="70dp"
-            android:layout_below="@+id/linearLayout"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/relativeLayout">
+                        android:layout_width="fill_parent"
+                        android:layout_height="70dp"
+                        android:layout_below="@+id/menuBar"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/relativeLayout">
+
+                    <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:id="@+id/imageView2"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/date_background_1"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="date"
+                            android:textColor="#FFF"
+                            android:textSize="18sp"
+                            android:id="@+id/date"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"/>
+
+                    <ImageButton
+                            android:id="@+id/nextDay"
+                            android:src="@drawable/arrow_right"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:layout_marginRight="8dip"
+                            android:onClick="nextDay"
+                            style="@style/white_button"
+                            android:layout_alignTop="@+id/previousDay"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"/>
 
 
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/imageView2"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/date_background_1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="December 12th 2014"
-                android:textColor="#FFF"
-                android:textSize="18sp"
-                android:id="@+id/textView"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
-
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:src="@drawable/arrow_right"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:layout_marginRight = "8dip"
-                style="@style/white_button"
-                android:layout_alignTop="@+id/imageButton"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                    <ImageButton
+                            android:id="@+id/previousDay"
+                            android:src="@drawable/arrow_left"
+                            android:scaleType="fitCenter"
+                            android:onClick="previousDay"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="8dip"
+                            style="@style/white_button"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"/>
 
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:src="@drawable/arrow_left"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:layout_marginLeft = "8dip"
-                style="@style/white_button"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-
-        </RelativeLayout>
+                </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -197,8 +195,7 @@
                 android:layout_height="1dp"
                 android:background="#20FFFFFF"
                 android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
-                android:id="@+id/linearLayout">
+                android:layout_marginRight="4dp">
             </LinearLayout>
 
             <!-- 1 row of 2 buttons with text and icon starts -->
@@ -207,8 +204,7 @@
                 android:layout_width="fill_parent"
                 android:layout_marginTop = "15dp"
                 android:layout_height="wrap_content"
-                android:background="#0d0d0d"
-                android:id="@+id/linearLayout">
+                android:background="#0d0d0d">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -217,38 +213,33 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
-                    android:id="@+id/linearLayout">
+                    android:background="#0d0d0d">
 
                     <Button
                         android:layout_width="fill_parent"
                         android:layout_weight="1"
                         android:text="Cancel"
-                        android:id="@+id/button"
                         android:onClick="cancel"
                         style="@style/gray_button" />
-
-
                 </LinearLayout>
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip"
-                    android:background="#0d0d0d"
-                    android:id="@+id/linearLayout">
+                <!--<LinearLayout-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft = "4dip"-->
+                    <!--android:layout_marginRight = "4dip"-->
+                    <!--android:background="#0d0d0d">-->
 
-                    <Button
-                        android:layout_width="fill_parent"
-                        android:layout_weight="1"
-                        android:text="Edit"
-                        android:id="@+id/button"
-                        style="@style/blue_button" />
+                    <!--<Button-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:text="Edit"-->
+                        <!--android:id="@+id/button"-->
+                        <!--style="@style/blue_button" />-->
 
-                </LinearLayout>
+                <!--</LinearLayout>-->
 
                 <LinearLayout
                     android:orientation="horizontal"

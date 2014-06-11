@@ -53,7 +53,7 @@
                 android:layout_below="@+id/imageButton"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:id="@+id/linearLayout">
+                android:id="@+id/menuBar">
 
 
             <Button
@@ -61,7 +61,6 @@
                     android:layout_weight="1"
                     android:text="My Day"
                     android:onClick="myDay"
-                    android:id="@+id/button"
                     android:layout_marginLeft="8dip"
                     style="@style/blue_button"/>
 
@@ -69,7 +68,6 @@
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:text="Stats"
-                    android:id="@+id/button"
                     android:onClick="myStats"
                     android:layout_marginLeft="8dip"
                     android:layout_marginRight="8dip"
@@ -80,7 +78,6 @@
                     android:layout_weight="1"
                     android:text="Friends"
                     android:onClick="myFriends"
-                    android:id="@+id/button"
                     android:layout_marginRight="8dip"
                     style="@style/gray_button"/>
 
@@ -90,7 +87,7 @@
         <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="70dp"
-                android:layout_below="@+id/linearLayout"
+                android:layout_below="@+id/menuBar"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:id="@+id/relativeLayout">
@@ -186,8 +183,7 @@
                         android:orientation="horizontal"
                         android:layout_width="fill_parent"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/linearLayout">
+                        android:layout_height="wrap_content">
 
                     <Button
                             android:layout_width="fill_parent"
@@ -203,8 +199,7 @@
                         android:orientation="horizontal"
                         android:layout_width="fill_parent"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/linearLayout">
+                        android:layout_height="wrap_content">
 
                     <Button
                             android:layout_width="fill_parent"
@@ -212,7 +207,6 @@
                             android:text="Submit"
                             android:layout_marginLeft="4dip"
                             android:layout_marginRight="4dip"
-                            android:id="@+id/button"
                             android:onClick="submitDailyStats"
                             style="@style/blue_button"/>
 
@@ -269,14 +263,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dip"
                         android:layout_marginRight="4dip"
-                        android:background="#0d0d0d"
-                        android:id="@+id/linearLayout">
+                        android:background="#0d0d0d">
 
                     <Button
                             android:layout_width="fill_parent"
                             android:layout_weight="1"
                             android:text="Edit or Remove"
-                            android:id="@+id/button"
                             android:onClick="editOrRemove"
                             style="@style/gray_button"/>
 
@@ -296,7 +288,6 @@
                             android:layout_width="fill_parent"
                             android:layout_weight="1"
                             android:text="Add More Items"
-                            android:id="@+id/button"
                             android:onClick="addMoreItems"
                             style="@style/gray_button"/>
 
@@ -309,8 +300,8 @@
                     android:layout_marginTop="15dp"
                     android:layout_height="wrap_content"
                     android:background="#0d0d0d"
+                    android:visibility="gone"
                     android:id="@+id/footerButton_summary">
-
 
                 <LinearLayout
                         android:orientation="horizontal"
@@ -325,9 +316,20 @@
                             android:layout_width="fill_parent"
                             android:layout_weight="1"
                             android:text="Add More Items"
+                            android:visibility="gone"
+                            android:id="@+id/addMoreItemsSummary"
                             android:onClick="viewModeAddStats"
                             style="@style/gray_button"/>
 
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginRight="4dip"
+                        android:background="#0d0d0d">
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

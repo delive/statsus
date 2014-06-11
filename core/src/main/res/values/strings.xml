@@ -12,13 +12,13 @@
     <string name="date_view_previous">Previous Day</string>
     <string name="intro_text_1">What would you like to keep track of?</string>
     <string name="sub_text_1">Pick from the items below:</string>
-    <string name="sub_text_2">Click the item you'd like to edit:</string>
-    <string name="sub_text_3">Items you've picked so far:</string>
+    <string name="sub_text_2">Click the item you\'d like to edit:</string>
+    <string name="sub_text_3">Items you\'ve picked so far:</string>
     <string name="sub_text_4">Add more from the items bellow:</string>
     <string name="sub_text_5">Your items for today:</string>
     <string name="sub_text_6">You can also find items in the categories below:</string>
     <string name="sub_text_7">Add your own item:</string>
-    <string name="input_text_1">Search here for the items you'd like to add</string>
+    <string name="input_text_1">Search here for the items you\'d like to add</string>
     <string name="item_icon">Item Icon</string>
     <string name="item_text">Happy</string>
     <string name="item_text_preview">Item Preview</string>
