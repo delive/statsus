@@ -81,7 +81,10 @@ public class Home
     }
 
     private void checkAndSetViewMode() {
-        if (this.viewMode == null || viewDateIsToday() || viewDateIsYesterday()) {
+        if (this.viewMode == null) {
+            this.viewMode = ViewMode.Default;
+        }
+        if (this.viewMode == ViewMode.AddStat && !(viewDateIsToday() || viewDateIsYesterday())) {
             this.viewMode = ViewMode.Default;
         }
     }
@@ -128,11 +131,14 @@ public class Home
     }
 
     public void cancelDailyStats(View v) {
+        doCancelDailyStats();
+        initHomePage();
+    }
+
+    private void doCancelDailyStats() {
         this.selectedStats.clear();
         ((LinearLayout)findViewById(R.id.selectedStats)).removeAllViews();
         findViewById(R.id.cancelSubmitDailyStats).setVisibility(View.GONE);
-
-        initHomePage();
     }
 
     /**
@@ -154,6 +160,7 @@ public class Home
         statContainer.addView(row);
 
         final Collection<Stat> stats = getValidStatsForToday();
+        removeStaleSelectedStats(stats);
         for (final Stat stat : stats) {
             if (this.selectedStats.contains(stat)) {
                 continue;
@@ -178,6 +185,20 @@ public class Home
             final LinearLayout col =
                     (LinearLayout) getLayoutInflater().inflate(R.layout.home_column_empty, statContainer, false);
             row.addView(col);
+        }
+    }
+
+    private void removeStaleSelectedStats(final Collection<Stat> stats) {
+        boolean clearRequired = false;
+        for (final Stat stat : this.selectedStats) {
+            if (!stats.contains(stat)) {
+                this.selectedStats.remove(stat);
+                clearRequired = true;
+            }
+        }
+
+        if (clearRequired) {
+            doCancelDailyStats();
         }
     }
 
@@ -298,5 +319,17 @@ public class Home
         final Intent intent = new Intent(this, EditOrRemoveStat.class);
         intent.putExtra("date", this.date);
         startActivity(intent);
+    }
+
+    @Override
+    public void nextDay(View v) {
+        this.viewMode = ViewMode.Default;
+        super.nextDay(v);
+    }
+
+    @Override
+    public void previousDay(View v) {
+        this.viewMode = ViewMode.Default;
+        super.previousDay(v);
     }
 }
