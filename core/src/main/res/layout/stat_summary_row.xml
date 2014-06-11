@@ -23,7 +23,7 @@
             android:id="@+id/stat_button"/>
 
     <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/note"
             android:src="@drawable/note_na"
             style="@style/note_container"/>
 

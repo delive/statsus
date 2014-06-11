@@ -84,12 +84,7 @@ public class LocalPersistenceManager {
             return Collections.EMPTY_LIST;
         }
         while (!c.isAfterLast()) {
-            final int sid = c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_STAT_ID));
-            final int uid = c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_USER_ID));
-            final String dateString = c.getString(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_DATE));
-            final int val = c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_VAL));
-
-            final SqlStatContainer stat = new SqlStatContainer(sid, uid, dateString, val);
+            final SqlStatContainer stat = buildSqlContainerFromCursor(c);
             stats.add(stat);
             c.moveToNext();
         }
@@ -188,12 +183,7 @@ public class LocalPersistenceManager {
             return Collections.EMPTY_LIST;
         }
         while (!c.isAfterLast()) {
-            final int sid = c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_STAT_ID));
-            final int uid = c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_USER_ID));
-            final String dateString = c.getString(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_DATE));
-            final int val = c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_VAL));
-
-            final SqlStatContainer stat = new SqlStatContainer(sid, uid, dateString, val);
+            final SqlStatContainer stat = buildSqlContainerFromCursor(c);
             stats.add(stat);
             c.moveToNext();
         }
@@ -201,6 +191,16 @@ public class LocalPersistenceManager {
         db.close();
 
         return stats;
+    }
+
+    private static SqlStatContainer buildSqlContainerFromCursor(final Cursor c) {
+        final int sid = c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_STAT_ID));
+        final int uid = c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_USER_ID));
+        final String dateString = c.getString(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_DATE));
+        final int val = c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_VAL));
+        final String note = c.getString(c.getColumnIndexOrThrow(StatContentSql.COLUMN_NAME_NOTE));
+
+        return new SqlStatContainer(sid, uid, dateString, val, note);
     }
 
     public static void truncateAll(final Context context) {
@@ -230,20 +230,39 @@ public class LocalPersistenceManager {
         return db;
     }
 
+    public static void updateNoteForStat(final SqlStatContainer statCont, final String note, final Context context) {
+        final SQLiteDatabase db = getReadableDb(context);
+        final ContentValues values = new ContentValues();
+        values.put("note", note);
+
+        final String whereClause = "sid = " + statCont.getSid() + " AND uid = " + statCont.getUid() + " AND date = '" + statCont.getDateString() + "'";
+
+        final int result = db.update(StatContentSql.TABLE_NAME, values, whereClause, null);
+
+        db.close();
+
+        if (result == -1) {
+            Log.w(LOGTAG, "error updating note");
+        }
+    }
+
     public static class SqlStatContainer {
         final int sid;
         final int uid;
         final String dateString;
         final int val;
+        private final String note;
 
         public SqlStatContainer(final int sid,
                                 final int uid,
                                 final String dateString,
-                                final int val) {
+                                final int val,
+                                final String note) {
             this.sid = sid;
             this.uid = uid;
             this.dateString = dateString;
             this.val = val;
+            this.note = note;
         }
 
         @Override
@@ -265,6 +284,10 @@ public class LocalPersistenceManager {
 
         public int getVal() {
             return val;
+        }
+
+        public String getNote() {
+            return this.note;
         }
     }
 }

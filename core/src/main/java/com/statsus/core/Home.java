@@ -15,13 +15,17 @@ import com.statsus.core.metadata.ViewMode;
 import com.statsus.core.persistence.LocalPersistenceManager;
 import com.statsus.core.persistence.LocalPersistenceManager.SqlStatContainer;
 
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
@@ -116,7 +120,7 @@ public class Home
                     (LinearLayout) getLayoutInflater().inflate(R.layout.stat_summary_row, contentAreaLl, false);
             final ImageButton iconButton = (ImageButton) rowLl.findViewById(R.id.stat_row_icon);
             final Button textButton = (Button) rowLl.findViewById(R.id.stat_button);
-            //todo add note lookup
+            final ImageButton noteButton = (ImageButton) rowLl.findViewById(R.id.note);
             final Button valueButton = (Button) rowLl.findViewById(R.id.stat_value_button);
 
             final Stat stat = Stat.getStatFromId(cont.getSid());
@@ -126,8 +130,45 @@ public class Home
             stat.setBackgroundResource(valueButton);
             valueButton.setText(Integer.toString(cont.getVal()));
 
+            final String note = cont.getNote();
+            stat.setNoteButton(noteButton, !Util.isNullOrEmpty(note), buildNoteAlert(cont, note, noteButton));
+
             contentAreaLl.addView(rowLl);
         }
+    }
+
+    private AlertDialog buildNoteAlert(final SqlStatContainer statCont, final String note, final ImageButton noteButton) {
+        final Builder builder = new Builder(this);
+        builder.setTitle("Note: " + Stat.getStatFromId(statCont.getSid()) + " on " + statCont.getDateString());
+        final EditText noteView = new EditText(this);
+        noteView.setText(note);
+        builder.setView(noteView);
+
+        builder.setPositiveButton("Save", getClickListenerForNoteSave(statCont, noteView, noteButton));
+        builder.setNegativeButton("Cancel", getClickListenerForNoteCancel());
+
+        return builder.create();
+    }
+
+    private DialogInterface.OnClickListener getClickListenerForNoteSave(final SqlStatContainer statCont,
+                                                                        final EditText note,
+                                                                        final ImageButton noteButton) {
+        return new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(final DialogInterface dialogInterface, final int i) {
+                 LocalPersistenceManager.updateNoteForStat(statCont, note.getText().toString(), getApplicationContext());
+                noteButton.setImageResource(R.drawable.note_exists);
+            }
+        };
+    }
+
+    private DialogInterface.OnClickListener getClickListenerForNoteCancel() {
+        return new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(final DialogInterface dialogInterface, final int i) {
+                // cancelled
+            }
+        };
     }
 
     public void cancelDailyStats(View v) {

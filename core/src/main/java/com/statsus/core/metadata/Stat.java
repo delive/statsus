@@ -10,6 +10,9 @@ import java.util.Set;
 
 import com.statsus.core.R;
 
+import android.app.AlertDialog;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -91,5 +94,24 @@ public enum Stat {
     public static Collection<Stat> getStatsForCategory(final Category category) {
         final Set<Stat> stats = statsByCategory.get(category);
         return stats == null ? Collections.EMPTY_LIST : new ArrayList<Stat>(stats);
+    }
+
+    public void setNoteButton(final ImageButton button, final boolean hasNote, final AlertDialog alert) {
+        if (hasNote) {
+            button.setImageResource(R.drawable.note_exists);
+        }
+        else {
+            button.setImageResource(R.drawable.note_na);
+        }
+        button.setOnClickListener(buildClickListenerForNoteButton(alert));
+    }
+
+    private OnClickListener buildClickListenerForNoteButton(final AlertDialog alert) {
+        return new OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                alert.show();
+            }
+        };
     }
 }

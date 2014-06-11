@@ -8,6 +8,10 @@ import android.content.Intent;
  */
 public class Util {
     public static void setIntentFlagNoHistory(final Intent intent) {
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+    }
+
+    public static boolean isNullOrEmpty(final String str) {
+        return str == null || str.equals("");
     }
 }

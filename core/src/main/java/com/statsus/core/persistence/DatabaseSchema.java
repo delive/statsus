@@ -21,6 +21,7 @@ public class DatabaseSchema {
         public static final String COLUMN_NAME_USER_ID = "uid";
         public static final String COLUMN_NAME_DATE = "date";
         public static final String COLUMN_NAME_VAL = "val";
+        public static final String COLUMN_NAME_NOTE = "note";
 
         // primary key sid,uid,date
 
@@ -31,6 +32,7 @@ public class DatabaseSchema {
                         StatContentSql.COLUMN_NAME_USER_ID + " BIGINT, " +
                         StatContentSql.COLUMN_NAME_DATE + " DATE, " +
                         StatContentSql.COLUMN_NAME_VAL + " INTEGER," +
+                        StatContentSql.COLUMN_NAME_NOTE + " TEXT," +
                         " PRIMARY KEY ("
                         + StatContentSql.COLUMN_NAME_STAT_ID + ", "
                         + StatContentSql.COLUMN_NAME_USER_ID + ", "
