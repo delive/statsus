@@ -65,6 +65,18 @@
     <string name="year">Year</string>
     <string name="custom">Custom</string>
 
+    <string name="bgcolor1">#151515</string>
+    <string name="bgcolor2">#000</string>
+
+    <string name="main_color_1">#2d9dfb</string>
+    <string name="main_color_2">#FFF</string>
+
+    <string name="sub_color_1">#57385c</string>
+    <string name="sub_color_2">#2d5bc5</string>
+    <string name="sub_color_3">#f87d6e</string>
+    <string name="sub_color_4">#2dcbc9</string>
+    <string name="sub_color_5">#ba233f</string>
+
 
 
 

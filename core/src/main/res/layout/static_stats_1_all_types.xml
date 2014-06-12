@@ -2,7 +2,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:background="#151515"
+    android:background="@string/bgcolor1"
     android:layout_height="fill_parent">
 
 
@@ -13,7 +13,7 @@
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="10dp"
-        android:background="#151515"
+        android:background="@string/bgcolor1"
         android:paddingBottom="@dimen/activity_vertical_margin"
         tools:context="com.example.statsusv1.statsusv1.Statsus">
 
@@ -51,7 +51,7 @@
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:layout_height="wrap_content"
-            android:background="#000"
+            android:background="@string/bgcolor2"
             android:layout_below="@+id/settings_button"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -64,7 +64,7 @@
                 android:onClick="myDay"
                 android:id="@+id/bt_my_day"
                 android:layout_marginLeft = "8dip"
-                style="@style/blue_button" />
+                style="@style/gray_button" />
 
             <Button
                 android:layout_width="fill_parent"
@@ -74,7 +74,7 @@
                 android:onClick="myStats"
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
-                style="@style/gray_button" />
+                style="@style/blue_button" />
 
             <Button
                 android:layout_width="fill_parent"
@@ -107,7 +107,7 @@
                 android:text="@string/single_items"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
-                android:textColor="#2d9dfb"
+                android:textColor="@string/main_color_1"
                 android:textSize="30sp" />
 
             <TextView
@@ -117,7 +117,7 @@
                 android:text="@string/single_items_subtext"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
-                android:textColor="#FFF"
+                android:textColor="@string/main_color_2"
                 android:textSize="14sp" />
 
             <Button
@@ -152,7 +152,7 @@
                 android:text="@string/item_groups"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
-                android:textColor="#2d9dfb"
+                android:textColor="@string/main_color_1"
                 android:textSize="30sp" />
 
             <TextView
@@ -162,7 +162,7 @@
                 android:text="@string/item_groups_subtext"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
-                android:textColor="#FFF"
+                android:textColor="@string/main_color_2"
                 android:textSize="14sp" />
 
             <Button
@@ -195,7 +195,7 @@
                 android:text="@string/intersecting_items"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
-                android:textColor="#2d9dfb"
+                android:textColor="@string/main_color_1"
                 android:textSize="30sp" />
 
             <TextView
@@ -205,7 +205,7 @@
                 android:text="@string/intersecting_items_subtext"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
-                android:textColor="#FFF"
+                android:textColor="@string/main_color_2"
                 android:textSize="14sp" />
 
             <Button

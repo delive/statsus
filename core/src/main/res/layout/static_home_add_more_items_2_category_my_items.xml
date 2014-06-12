@@ -2,7 +2,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:background="#151515"
+    android:background="@string/bgcolor1"
     android:layout_height="fill_parent">
 
 
@@ -13,7 +13,7 @@
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="10dp"
-        android:background="#151515"
+        android:background="@string/bgcolor1"
         android:paddingBottom="@dimen/activity_vertical_margin"
         tools:context="com.example.statsusv1.statsusv1.Statsus">
 
@@ -51,7 +51,7 @@
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:layout_height="wrap_content"
-            android:background="#000"
+            android:background="@string/bgcolor2"
             android:layout_below="@+id/settings_button"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -120,7 +120,7 @@
             android:paddingBottom="15dp"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
-            android:background="#000"
+            android:background="@string/bgcolor2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
 
@@ -137,7 +137,7 @@
                     android:text="@string/currently_viewing"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:textColor="#2d9dfb"
+                    android:textColor="@string/main_color_1"
                     android:textSize="22sp" />
 
                 <TextView
@@ -146,7 +146,7 @@
                     android:text="@string/my_items"
                     android:layout_marginLeft = "4dip"
                     android:layout_marginRight = "4dip"
-                    android:textColor="#FFF"
+                    android:textColor="@string/main_color_2"
                     android:textSize="22sp" />
 
             </LinearLayout>
@@ -172,14 +172,14 @@
                     <ImageButton
                         android:id="@+id/item_icon_1"
                         android:contentDescription="@string/item_icon"
-                        android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
+                        android:src="@drawable/uicons_restaurant"
+                        android:background="@string/sub_color_5"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="@string/item_text"
-                        android:textColor="#952336"
+                        android:textColor="@string/sub_color_5"
                         android:id="@+id/item_text_1" />
 
                 </LinearLayout>
@@ -195,14 +195,14 @@
                     <ImageButton
                         android:id="@+id/item_icon_2"
                         android:contentDescription="@string/item_icon"
-                        android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
+                        android:src="@drawable/uicons_chess"
+                        android:background="@string/sub_color_4"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="@string/item_text"
-                        android:textColor="#952336"
+                        android:textColor="@string/sub_color_4"
                         android:id="@+id/item_text_2" />
 
                 </LinearLayout>
@@ -229,14 +229,14 @@
                     <ImageButton
                         android:id="@+id/item_icon_3"
                         android:contentDescription="@string/item_icon"
-                        android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
+                        android:src="@drawable/uicons_movie"
+                        android:background="@string/sub_color_3"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="@string/item_text"
-                        android:textColor="#952336"
+                        android:textColor="@string/sub_color_3"
                         android:id="@+id/item_text_3" />
 
                 </LinearLayout>
@@ -252,14 +252,14 @@
                     <ImageButton
                         android:id="@+id/item_icon_4"
                         android:contentDescription="@string/item_icon"
-                        android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
+                        android:src="@drawable/uicons_videogames"
+                        android:background="@string/sub_color_2"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="@string/item_text"
-                        android:textColor="#952336"
+                        android:textColor="@string/sub_color_2"
                         android:id="@+id/item_text_4" />
 
                 </LinearLayout>
@@ -287,13 +287,13 @@
                         android:id="@+id/item_icon_5"
                         android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
+                        android:background="@string/sub_color_1"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="@string/item_text"
-                        android:textColor="#952336"
+                        android:textColor="@string/sub_color_1"
                         android:id="@+id/item_text_5" />
 
                 </LinearLayout>
@@ -309,14 +309,14 @@
                     <ImageButton
                         android:id="@+id/item_icon_6"
                         android:contentDescription="@string/item_icon"
-                        android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
+                        android:src="@drawable/uicons_restaurant"
+                        android:background="@string/sub_color_5"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="@string/item_text"
-                        android:textColor="#952336"
+                        android:textColor="@string/sub_color_5"
                         android:id="@+id/item_text_6" />
 
                 </LinearLayout>
@@ -343,14 +343,14 @@
                     <ImageButton
                         android:id="@+id/item_icon_7"
                         android:contentDescription="@string/item_icon"
-                        android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
+                        android:src="@drawable/uicons_movie"
+                        android:background="@string/sub_color_4"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="@string/item_text"
-                        android:textColor="#952336"
+                        android:textColor="@string/sub_color_4"
                         android:id="@+id/item_text_7" />
 
                 </LinearLayout>
@@ -367,13 +367,13 @@
                         android:id="@+id/item_icon_8"
                         android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
-                        android:background="#952336"
+                        android:background="@string/sub_color_3"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="@string/item_text"
-                        android:textColor="#952336"
+                        android:textColor="@string/sub_color_3"
                         android:id="@+id/item_text_8" />
 
                 </LinearLayout>
