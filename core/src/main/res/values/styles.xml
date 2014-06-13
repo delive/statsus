@@ -9,7 +9,7 @@
 
     <style name="white_button" parent="android:Widget">
         <item name="android:background">@drawable/white_button</item>
-        <item name="android:textColor">@string/main_color_1</item>
+        <item name="android:textColor">@color/main_color_1</item>
         <item name="android:layout_height">35dp</item>
         <item name="android:layout_width">35dp</item>
     </style>
@@ -22,13 +22,13 @@
         <item name="android:paddingLeft">6dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">left|center_vertical</item>
-        <item name="android:background">@string/main_color_2</item>
+        <item name="android:background">@color/main_color_2</item>
     </style>
 
 
     <style name="blue_button" parent="android:Widget">
-        <item name="android:background">@string/main_color_1</item>
-        <item name="android:textColor">@string/main_color_2</item>
+        <item name="android:background">@color/main_color_1</item>
+        <item name="android:textColor">@color/main_color_2</item>
         <item name="android:layout_height">35dp</item>
         <item name="android:paddingTop">0dp</item>
         <item name="android:paddingBottom">0dp</item>
@@ -36,7 +36,7 @@
 
     <style name="gray_button" parent="android:Widget">
         <item name="android:background">@drawable/bt_gray_full</item>
-        <item name="android:textColor">@string/main_color_1</item>
+        <item name="android:textColor">@color/main_color_1</item>
         <item name="android:layout_height">34dp</item>
         <item name="android:paddingTop">0dp</item>
         <item name="android:paddingBottom">0dp</item>
@@ -44,7 +44,7 @@
 
     <style name="input_black" parent="android:Widget">
         <item name="android:background">@drawable/input_black</item>
-        <item name="android:textColor">@string/main_color_1</item>
+        <item name="android:textColor">@color/main_color_1</item>
         <item name="android:layout_height">34dp</item>
         <item name="android:paddingTop">0dp</item>
         <item name="android:paddingBottom">0dp</item>
@@ -95,7 +95,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">8dip</item>
         <item name="android:layout_marginRight">4dip</item>
-        <item name="android:textColor">@string/main_color_1</item>
+        <item name="android:textColor">@color/main_color_1</item>
         <item name="android:textSize">18sp</item>
     </style>
 
@@ -104,7 +104,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">4dip</item>
         <item name="android:layout_marginRight">8dip</item>
-        <item name="android:textColor">@string/main_color_2</item>
+        <item name="android:textColor">@color/main_color_2</item>
         <item name="android:textSize">18sp</item>
     </style>
 

@@ -59,7 +59,8 @@ public class Categories
                 final String statString = adapterView.getItemAtPosition(pos).toString();
                 final Stat stat = Stat.getStatFromString(statString);
                 LocalPersistenceManager.addSelectedStatCategory(stat, view.getContext());
-                activity.finish();
+
+                Util.goHomeDirectly(activity);
             }
         };
     }

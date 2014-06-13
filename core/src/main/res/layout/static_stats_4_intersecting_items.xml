@@ -2,7 +2,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:background="@string/bgcolor1"
+    android:background="@color/bgcolor1"
     android:layout_height="fill_parent">
 
 
@@ -13,7 +13,7 @@
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="10dp"
-        android:background="@string/bgcolor1"
+        android:background="@color/bgcolor1"
         android:paddingBottom="@dimen/activity_vertical_margin"
         tools:context="com.example.statsusv1.statsusv1.Statsus">
 
@@ -51,7 +51,7 @@
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:layout_height="wrap_content"
-            android:background="@string/bgcolor2"
+            android:background="@color/bgcolor2"
             android:layout_below="@+id/settings_button"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -102,7 +102,7 @@
                 android:text="Viewing Intersecting Stats For:"
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
-                android:textColor="@string/main_color_1"
+                android:textColor="@color/main_color_1"
                 android:textSize="22sp" />
         </LinearLayout>
 
@@ -136,13 +136,13 @@
                         android:id="@+id/uicons_videogames"
                         android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_videogames"
-                        android:background="@string/sub_color_1"
+                        android:background="@color/sub_color_1"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="@string/item_text"
-                        android:textColor="@string/sub_color_1"
+                        android:textColor="@color/sub_color_1"
                         android:id="@+id/uicons_videogames_txt" />
 
                 </LinearLayout>
@@ -159,13 +159,13 @@
                         android:id="@+id/uicons_restaurant"
                         android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_restaurant"
-                        android:background="@string/sub_color_2"
+                        android:background="@color/sub_color_2"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="@string/item_text"
-                        android:textColor="@string/sub_color_2"
+                        android:textColor="@color/sub_color_2"
                         android:id="@+id/uicons_restaurant_txt" />
 
                 </LinearLayout>
@@ -191,13 +191,13 @@
                         android:id="@+id/uicons_smiley"
                         android:contentDescription="@string/item_icon"
                         android:src="@drawable/uicons_smiley"
-                        android:background="@string/sub_color_5"
+                        android:background="@color/sub_color_5"
                         style="@style/colored_squared" />
 
                     <Button
                         style="@style/uicon_text"
                         android:text="@string/item_text"
-                        android:textColor="@string/sub_color_5"
+                        android:textColor="@color/sub_color_5"
                         android:id="@+id/uicons_smiley_txt" />
 
                 </LinearLayout>
@@ -236,7 +236,7 @@
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:layout_height="wrap_content"
-            android:background="@string/bgcolor2"
+            android:background="@color/bgcolor2"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:id="@+id/time_period">
@@ -340,7 +340,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="0.10"
                     android:layout_height="10dp"
-                    android:background="@string/main_color_1"/>
+                    android:background="@color/main_color_1"/>
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_weight="0.90"
@@ -357,7 +357,7 @@
                     style="@style/stats_label"
                     android:layout_width="0dp"
                     android:layout_weight="0.85"
-                    android:textColor="@string/sub_color_1"
+                    android:textColor="@color/sub_color_1"
                     android:text="Percentage of entries that were part of the intersection for Happy:" />
                 <TextView
                     style="@style/stats_value"
@@ -379,7 +379,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="0.15"
                     android:layout_height="10dp"
-                    android:background="@string/sub_color_1"/>
+                    android:background="@color/sub_color_1"/>
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_weight="0.75"
@@ -395,7 +395,7 @@
                     style="@style/stats_label"
                     android:layout_width="0dp"
                     android:layout_weight="0.85"
-                    android:textColor="@string/sub_color_2"
+                    android:textColor="@color/sub_color_2"
                     android:text="Percentage of entries that were part of the intersection for Happy:" />
                 <TextView
                     style="@style/stats_value"
@@ -417,7 +417,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="0.25"
                     android:layout_height="10dp"
-                    android:background="@string/sub_color_2"/>
+                    android:background="@color/sub_color_2"/>
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_weight="0.75"
@@ -433,7 +433,7 @@
                     style="@style/stats_label"
                     android:layout_width="0dp"
                     android:layout_weight="0.85"
-                    android:textColor="@string/sub_color_5"
+                    android:textColor="@color/sub_color_5"
                     android:text="Percentage of entries that were part of the intersection for Happy:" />
                 <TextView
                     style="@style/stats_value"
@@ -455,7 +455,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="0.50"
                     android:layout_height="10dp"
-                    android:background="@string/sub_color_5"/>
+                    android:background="@color/sub_color_5"/>
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_weight="0.50"

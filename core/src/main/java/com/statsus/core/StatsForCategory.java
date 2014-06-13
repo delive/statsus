@@ -6,6 +6,7 @@ import com.statsus.core.metadata.Category;
 import com.statsus.core.metadata.Stat;
 import com.statsus.core.persistence.LocalPersistenceManager;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -63,7 +64,7 @@ public class StatsForCategory
                     (LinearLayout) getLayoutInflater().inflate(R.layout.home_stat_column, statContainer, false);
             stat.setStatImageProperties((ImageButton) col.findViewById(R.id.stat_button_image));
             final Button statButton = (Button) col.findViewById(R.id.stat_button);
-            statButton.setOnClickListener(getClickListenerForAddStatCategory(stat));
+            statButton.setOnClickListener(getClickListenerForAddStatCategory(stat, this));
             stat.setTextProperties(statButton);
             row.addView(col);
             colCount++;
@@ -77,12 +78,12 @@ public class StatsForCategory
         }
     }
 
-    private OnClickListener getClickListenerForAddStatCategory(final Stat stat) {
+    private OnClickListener getClickListenerForAddStatCategory(final Stat stat, final Activity activity) {
         return new OnClickListener() {
             @Override
             public void onClick(final View view) {
                 LocalPersistenceManager.addSelectedStatCategory(stat, view.getContext());
-                finish();
+                Util.goHomeDirectly(activity);
             }
         };
     }

@@ -8,6 +8,7 @@ import com.statsus.core.metadata.Category;
 import com.statsus.core.metadata.Stat;
 import com.statsus.core.persistence.LocalPersistenceManager;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
@@ -33,5 +34,11 @@ public class Util {
             stats.remove(removeStat);
         }
         return stats;
+    }
+
+    public static void goHomeDirectly(final Activity activity) {
+        final Intent intent = new Intent(activity, Home.class);
+        setIntentFlagNoHistory(intent);
+        activity.startActivity(intent);
     }
 }
