@@ -30,8 +30,13 @@ public class StatsForCategory
 
         this.category = (Category) getIntent().getSerializableExtra("category");
 
+        initSearch();
         initTitle();
         initStats();
+    }
+
+    private void initSearch() {
+        Categories.initSearch(this);
     }
 
     private void initTitle() {
@@ -47,7 +52,7 @@ public class StatsForCategory
         // init the first row
         LinearLayout row = (LinearLayout) getLayoutInflater().inflate(R.layout.home_category_row, statContainer, false);
         statContainer.addView(row);
-        final Collection<Stat> categoryStatsNotSelected = getCategoryStatsNotSelected();
+        final Collection<Stat> categoryStatsNotSelected = Util.getStatTypesNotSelected(this.category, this);
         for (final Stat stat : categoryStatsNotSelected) {
             if (colCount == 2) {
                 row = (LinearLayout) getLayoutInflater().inflate(R.layout.home_stat_row, statContainer, false);
@@ -70,16 +75,6 @@ public class StatsForCategory
                     (LinearLayout) getLayoutInflater().inflate(R.layout.home_column_empty, statContainer, false);
             row.addView(col);
         }
-    }
-
-    private Collection<Stat> getCategoryStatsNotSelected() {
-        final Collection<Stat> statsSelected = LocalPersistenceManager.getUserSelectedStats(getApplicationContext());
-        final Collection<Stat> stats = Stat.getStatsForCategory(this.category);
-
-        for (final Stat removeStat : statsSelected) {
-            stats.remove(removeStat);
-        }
-        return stats;
     }
 
     private OnClickListener getClickListenerForAddStatCategory(final Stat stat) {

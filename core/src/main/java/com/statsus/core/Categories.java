@@ -1,11 +1,22 @@
 package com.statsus.core;
 
-import com.statsus.core.metadata.Category;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
+import com.statsus.core.metadata.Category;
+import com.statsus.core.metadata.Stat;
+import com.statsus.core.persistence.LocalPersistenceManager;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -19,7 +30,38 @@ public class Categories
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_add_more_items);
+        initSearch(this);
         initCategories();
+    }
+
+    static void initSearch(final Activity activity) {
+        final Collection<Stat> stats = Util.getStatTypesNotSelected(null, activity);
+        final List<String> statStrings = new ArrayList<String>(stats.size());
+        for (final Stat stat : stats) {
+            statStrings.add(stat.toString());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,
+                android.R.layout.simple_dropdown_item_1line, statStrings);
+        AutoCompleteTextView searchView = (AutoCompleteTextView)
+                activity.findViewById(R.id.search_stat);
+        searchView.setAdapter(adapter);
+        searchView.setOnItemClickListener(getClickListenerForStatAutoComplete(activity));
+    }
+
+    private static OnItemClickListener getClickListenerForStatAutoComplete(final Activity activity) {
+        return new OnItemClickListener() {
+            @Override
+            public void onItemClick(final AdapterView<?> adapterView,
+                                    final View view,
+                                    final int pos,
+                                    final long rowId) {
+                final String statString = adapterView.getItemAtPosition(pos).toString();
+                final Stat stat = Stat.getStatFromString(statString);
+                LocalPersistenceManager.addSelectedStatCategory(stat, view.getContext());
+                activity.finish();
+            }
+        };
     }
 
     private void initCategories() {

@@ -114,4 +114,13 @@ public enum Stat {
             }
         };
     }
+
+    public static Stat getStatFromString(final String statString) {
+        for (final Stat stat : values()) {
+            if (stat.toString().equals(statString)) {
+                return stat;
+            }
+        }
+        throw new IllegalArgumentException("no stat named " + statString);
+    }
 }

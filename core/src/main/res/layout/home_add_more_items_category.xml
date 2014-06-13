@@ -96,13 +96,13 @@
             android:layout_alignParentStart="true"
             android:id="@+id/search_function">
 
-            <EditText
+            <AutoCompleteTextView
                 android:layout_width="fill_parent"
-                android:id="@+id/editText2"
+                android:id="@+id/search_stat"
                 android:layout_below="@+id/linearLayout"
                 android:layout_marginLeft = "4dip"
                 android:layout_marginRight = "4dip"
-                android:text="Search here for the items you'd like to add"
+                android:hint="Search here for the items you'd like to add"
                 android:paddingLeft="15dp"
                 android:layout_height="50dp"
                 style="@style/gray_button"/>
