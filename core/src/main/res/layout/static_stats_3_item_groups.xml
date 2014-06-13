@@ -223,6 +223,57 @@
             </LinearLayout>
 
 
+            <LinearLayout style="@style/stats_divider"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="22dp"
+                android:layout_height="2dp"> </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft = "8dip"
+                    android:layout_marginRight = "4dip">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:text="Save Group"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/save_group"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft = "4dip"
+                    android:layout_marginRight = "4dip">
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:text="Open Saved Group"
+                        android:layout_marginLeft = "4dip"
+                        android:layout_marginRight = "4dip"
+                        android:id="@+id/open_group"
+                        android:onClick="myStats"
+                        style="@style/gray_button" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
 
         </LinearLayout>
         <!-- 1 row of 2 buttons with text and icon ends -->
@@ -231,7 +282,7 @@
             android:orientation="horizontal"
             android:layout_below="@+id/single_items"
             android:layout_width="fill_parent"
-            android:layout_marginTop = "10dp"
+            android:layout_marginTop = "20dp"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:layout_height="wrap_content"
@@ -599,7 +650,10 @@
                     android:text="3" />
             </LinearLayout>
 
-            <LinearLayout style="@style/stats_divider" > </LinearLayout>
+            <LinearLayout style="@style/stats_divider"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="22dp"
+                android:layout_height="2dp"> </LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
