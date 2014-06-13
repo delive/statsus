@@ -41,7 +41,7 @@
     <string name="default_numeric_value">5</string>
     <string name="category_title">Category Title</string>
     <string name="currently_viewing">Currently Viewing:</string>
-    <string name="currently_viewing_stats_for">Currently Viewing Stats For:</string>
+    <string name="currently_viewing_stats_for">Viewing Stats For:</string>
     <string name="value1">1</string>
     <string name="value2">2</string>
     <string name="value3">3</string>

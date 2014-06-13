@@ -99,7 +99,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Viewing Group Stats For:"
+                android:text="Viewing Intersecting Stats For:"
                 android:layout_marginLeft = "8dip"
                 android:layout_marginRight = "8dip"
                 android:textColor="@string/main_color_1"
@@ -223,56 +223,6 @@
             </LinearLayout>
 
 
-            <LinearLayout style="@style/stats_divider"
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="22dp"
-                android:layout_height="2dp"> </LinearLayout>
-
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft = "8dip"
-                    android:layout_marginRight = "4dip">
-
-                    <Button
-                        android:layout_width="fill_parent"
-                        android:text="Save Group"
-                        android:layout_marginLeft = "4dip"
-                        android:layout_marginRight = "4dip"
-                        android:id="@+id/save_group"
-                        android:onClick="myStats"
-                        style="@style/gray_button" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft = "4dip"
-                    android:layout_marginRight = "4dip">
-
-                    <Button
-                        android:layout_width="fill_parent"
-                        android:text="Open Saved Group"
-                        android:layout_marginLeft = "4dip"
-                        android:layout_marginRight = "4dip"
-                        android:id="@+id/open_group"
-                        android:onClick="myStats"
-                        style="@style/gray_button" />
-
-                </LinearLayout>
-            </LinearLayout>
-
 
 
         </LinearLayout>
@@ -348,135 +298,18 @@
                     style="@style/stats_label"
                     android:layout_width="0dp"
                     android:layout_weight="0.7"
-                    android:text="Total number of logs for all the items combined:" />
+                    android:text="Number of times these items intersected:" />
                 <TextView
                     style="@style/stats_value"
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
                     android:gravity="right"
-                    android:text="182 times" />
+                    android:layout_weight="0.3"
+                    android:text="13 times" />
             </LinearLayout>
+
 
             <LinearLayout style="@style/stats_divider" > </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    style="@style/stats_label"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.7"
-                    android:textColor="@string/sub_color_1"
-                    android:text="Number of logs for Happy" />
-                <TextView
-                    style="@style/stats_value"
-                    android:layout_width="0dp"
-                    android:gravity="right"
-                    android:layout_weight="0.3"
-                    android:text="16 (25%)" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp">
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="0.25"
-                    android:layout_height="10dp"
-                    android:background="@string/sub_color_1"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="0.75"
-                    android:layout_height="10dp"
-                    android:background="#10FFFFFF"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    style="@style/stats_label"
-                    android:textColor="@string/sub_color_2"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.7"
-                    android:text="Number of logs for Happy" />
-                <TextView
-                    style="@style/stats_value"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.3"
-                    android:gravity="right"
-                    android:text="22 (25%)" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp">
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="0.25"
-                    android:layout_height="10dp"
-                    android:background="@string/sub_color_2"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="0.75"
-                    android:layout_height="10dp"
-                    android:background="#10FFFFFF"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    style="@style/stats_label"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.7"
-                    android:textColor="@string/sub_color_5"
-                    android:text="Number of logs for Happy" />
-                <TextView
-                    style="@style/stats_value"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.3"
-                    android:gravity="right"
-                    android:text="48 (50%)" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp">
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="0.50"
-                    android:layout_height="10dp"
-                    android:background="@string/sub_color_5"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="0.50"
-                    android:layout_height="10dp"
-                    android:background="#10FFFFFF"/>
-            </LinearLayout>
-
-            <LinearLayout style="@style/stats_divider"
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="22dp"
-                android:layout_height="2dp"> </LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -485,14 +318,14 @@
                 <TextView
                     style="@style/stats_label"
                     android:layout_width="0dp"
-                    android:layout_weight="0.8"
-                    android:text="Percentage of the full time period, any of these items were logged:" />
+                    android:layout_weight="0.85"
+                    android:text="Percentage out of the entire time period, any of these items intersected:" />
                 <TextView
-                    android:layout_weight="0.2"
+                    android:layout_weight="0.15"
                     android:layout_width="0dp"
-                    android:gravity="right"
                     style="@style/stats_value"
-                    android:text="80%" />
+                    android:gravity="right"
+                    android:text="10%" />
             </LinearLayout>
 
             <LinearLayout
@@ -505,15 +338,16 @@
                 android:layout_marginBottom="16dp">
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_weight="0.80"
+                    android:layout_weight="0.10"
                     android:layout_height="10dp"
                     android:background="@string/main_color_1"/>
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_weight="0.20"
+                    android:layout_weight="0.90"
                     android:layout_height="10dp"
                     android:background="#10FFFFFF"/>
             </LinearLayout>
+
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -521,16 +355,16 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/stats_label"
-                    android:textColor="@string/sub_color_1"
                     android:layout_width="0dp"
-                    android:layout_weight="0.8"
-                    android:text="Percentage out of the entire time period, Happy was logged:" />
+                    android:layout_weight="0.85"
+                    android:textColor="@string/sub_color_1"
+                    android:text="Percentage of entries that were part of the intersection for Happy:" />
                 <TextView
                     style="@style/stats_value"
-                    android:layout_weight="0.2"
                     android:layout_width="0dp"
+                    android:layout_weight="0.15"
                     android:gravity="right"
-                    android:text="45%" />
+                    android:text="25%" />
             </LinearLayout>
 
             <LinearLayout
@@ -543,12 +377,12 @@
                 android:layout_marginBottom="16dp">
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_weight="0.45"
+                    android:layout_weight="0.15"
                     android:layout_height="10dp"
                     android:background="@string/sub_color_1"/>
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_weight="0.55"
+                    android:layout_weight="0.75"
                     android:layout_height="10dp"
                     android:background="#10FFFFFF"/>
             </LinearLayout>
@@ -560,13 +394,13 @@
                 <TextView
                     style="@style/stats_label"
                     android:layout_width="0dp"
-                    android:layout_weight="0.8"
+                    android:layout_weight="0.85"
                     android:textColor="@string/sub_color_2"
-                    android:text="Percentage out of the entire time period, Happy was logged:" />
+                    android:text="Percentage of entries that were part of the intersection for Happy:" />
                 <TextView
                     style="@style/stats_value"
-                    android:layout_weight="0.2"
                     android:layout_width="0dp"
+                    android:layout_weight="0.15"
                     android:gravity="right"
                     android:text="25%" />
             </LinearLayout>
@@ -598,15 +432,15 @@
                 <TextView
                     style="@style/stats_label"
                     android:layout_width="0dp"
-                    android:layout_weight="0.8"
+                    android:layout_weight="0.85"
                     android:textColor="@string/sub_color_5"
-                    android:text="Percentage out of the entire time period, Happy was logged:" />
+                    android:text="Percentage of entries that were part of the intersection for Happy:" />
                 <TextView
                     style="@style/stats_value"
-                    android:layout_weight="0.2"
                     android:layout_width="0dp"
+                    android:layout_weight="0.15"
                     android:gravity="right"
-                    android:text="10%" />
+                    android:text="25%" />
             </LinearLayout>
 
             <LinearLayout
@@ -619,15 +453,17 @@
                 android:layout_marginBottom="8dp">
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_weight="0.10"
+                    android:layout_weight="0.50"
                     android:layout_height="10dp"
                     android:background="@string/sub_color_5"/>
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_weight="0.90"
+                    android:layout_weight="0.50"
                     android:layout_height="10dp"
                     android:background="#10FFFFFF"/>
             </LinearLayout>
+
+
 
             <LinearLayout style="@style/stats_divider"
                 android:layout_marginTop="22dp"
@@ -642,7 +478,7 @@
                     style="@style/stats_label"
                     android:layout_width="0dp"
                     android:layout_weight="0.8"
-                    android:text="Average Numeric Value for Group:" />
+                    android:text="Average Numeric Value Within the Intersection:" />
                 <TextView
                     style="@style/stats_value"
                     android:layout_width="0dp"
@@ -661,7 +497,7 @@
                     style="@style/stats_label"
                     android:layout_width="0dp"
                     android:layout_weight="0.8"
-                    android:text="Highest Numeric Value in the Group:" />
+                    android:text="Highest Numeric Value Within the Intersection:" />
                 <TextView
                     style="@style/stats_value"
                     android:layout_width="0dp"
@@ -680,7 +516,7 @@
                     style="@style/stats_label"
                     android:layout_width="0dp"
                     android:layout_weight="0.8"
-                    android:text="Lowest Numeric Value in the Group:" />
+                    android:text="Lowest Numeric Value Within the Intersection:" />
                 <TextView
                     style="@style/stats_value"
                     android:layout_width="0dp"

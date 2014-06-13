@@ -230,9 +230,14 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
                     android:text="Used during this time period:" />
                 <TextView
                     style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
                     android:text="15 times" />
             </LinearLayout>
 
@@ -244,9 +249,14 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
                     android:text="Most # of days used in a row:" />
                 <TextView
                     style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
                     android:text="4 days" />
             </LinearLayout>
 
@@ -258,9 +268,14 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
                     android:text="Longest break between uses:" />
                 <TextView
                     style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
                     android:text="2 days" />
             </LinearLayout>
 
@@ -272,9 +287,14 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
                     android:text="Percentage of the days used:" />
                 <TextView
                     style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
                     android:text="50%" />
             </LinearLayout>
 
@@ -307,9 +327,14 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
                     android:text="Average Numeric Value:" />
                 <TextView
                     style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
                     android:text="5.2" />
             </LinearLayout>
 
@@ -321,9 +346,14 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
                     android:text="Total Numeric Value:" />
                 <TextView
                     style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
                     android:text="85" />
             </LinearLayout>
 
@@ -335,9 +365,14 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
                     android:text="Highest Numeric Value:" />
                 <TextView
                     style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
                     android:text="7" />
             </LinearLayout>
 
@@ -349,9 +384,14 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
                     android:text="Lowest Numeric Value:" />
                 <TextView
                     style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
                     android:text="2" />
             </LinearLayout>
 
@@ -363,9 +403,14 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
                     android:text="Number of Notes Added:" />
                 <TextView
                     style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
                     android:text="5" />
             </LinearLayout>
 
