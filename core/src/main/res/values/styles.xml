@@ -94,7 +94,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">8dip</item>
-        <item name="android:layout_marginRight">8dip</item>
+        <item name="android:layout_marginRight">4dip</item>
         <item name="android:textColor">@string/main_color_1</item>
         <item name="android:textSize">18sp</item>
     </style>
@@ -102,7 +102,7 @@
     <style name="stats_value" parent="android:Widget">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginLeft">8dip</item>
+        <item name="android:layout_marginLeft">4dip</item>
         <item name="android:layout_marginRight">8dip</item>
         <item name="android:textColor">@string/main_color_2</item>
         <item name="android:textSize">18sp</item>

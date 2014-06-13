@@ -278,7 +278,28 @@
                     android:text="50%" />
             </LinearLayout>
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.50"
+                    android:layout_height="10dp"
+                    android:background="@string/sub_color_5"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.50"
+                    android:layout_height="10dp"
+                    android:background="#10FFFFFF"/>
+            </LinearLayout>
+
             <LinearLayout style="@style/stats_divider" > </LinearLayout>
+
 
             <LinearLayout
                 android:orientation="horizontal"
