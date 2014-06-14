@@ -2,6 +2,7 @@ package com.statsus.core;
 
 import java.util.Collection;
 
+import com.statsus.core.utility.Util;
 import com.statsus.core.metadata.Category;
 import com.statsus.core.metadata.Stat;
 import com.statsus.core.persistence.LocalPersistenceManager;
@@ -20,7 +21,7 @@ import android.widget.TextView;
  * @since 21
  */
 public class StatsForCategory
-        extends ActivityWithBanner {
+        extends ActivityWithMainMenu {
 
     private Category category;
 

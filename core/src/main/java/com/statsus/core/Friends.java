@@ -7,12 +7,11 @@ import android.os.Bundle;
  * @since 21
  */
 public class Friends
-        extends ActivityWithBanner {
+        extends ActivityWithDateSlider {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //todo real page
-        setContentView(R.layout.home_add_more_items);
     }
 }

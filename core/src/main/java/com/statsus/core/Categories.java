@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import com.statsus.core.utility.Util;
 import com.statsus.core.metadata.Category;
 import com.statsus.core.metadata.Stat;
 import com.statsus.core.persistence.LocalPersistenceManager;
@@ -25,7 +26,7 @@ import android.widget.LinearLayout;
  * @since 21
  */
 public class Categories
-        extends ActivityWithBanner {
+        extends ActivityWithMainMenu {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +43,12 @@ public class Categories
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,
-                android.R.layout.simple_dropdown_item_1line, statStrings);
+                R.layout.search_dropdown, statStrings);
         AutoCompleteTextView searchView = (AutoCompleteTextView)
                 activity.findViewById(R.id.search_stat);
         searchView.setAdapter(adapter);
+        //TODO get a real background on here that isn't transparent
+//        searchView.setDropDownBackgroundResource(R.drawable.input_black);
         searchView.setOnItemClickListener(getClickListenerForStatAutoComplete(activity));
     }
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="fill_parent"
+          android:layout_marginLeft="4dip"
+          android:layout_marginRight="4dip"
+          android:paddingLeft="15dp"
+          android:singleLine="true"
+          android:ellipsize="marquee"
+          android:layout_height="?android:attr/listPreferredItemHeight"
+          style="?android:attr/dropDownItemStyle"
+          android:textColor="@color/main_color_1"
+          android:background="@drawable/bt_gray_full"
+          />

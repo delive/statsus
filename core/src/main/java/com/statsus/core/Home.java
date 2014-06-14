@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import com.statsus.core.utility.Util;
 import com.statsus.core.metadata.Stat;
 import com.statsus.core.metadata.ViewMode;
 import com.statsus.core.persistence.LocalPersistenceManager;
@@ -31,7 +32,7 @@ import android.widget.LinearLayout;
 
 
 public class Home
-        extends ActivityWithBanner {
+        extends ActivityWithDateSlider {
 
     private static final String LOGTAG = "Home";
 
@@ -57,7 +58,7 @@ public class Home
     @Override
     protected void onResume() {
         super.onResume();
-        initHomePage();
+        initHomePage(false);
     }
 
     @Override
@@ -68,10 +69,10 @@ public class Home
     }
 
     @Override
-    protected void initHomePage() {
-        super.initHomePage();
+    protected void initHomePage(final boolean hardReset) {
+        super.initHomePage(hardReset);
         checkAndSetViewMode();
-        resetViews();
+        reset(hardReset);
 
         final List<SqlStatContainer> statContainers =
                 LocalPersistenceManager.getCompletedStatContainersForToday(this.date, getApplicationContext());
@@ -81,6 +82,15 @@ public class Home
         }
         else {
             initSummaryPage(statContainers);
+        }
+    }
+
+    private void reset(final boolean hardReset) {
+        if (hardReset) {
+            hardResetViews();
+        }
+        else {
+            softResetViews();
         }
     }
 
@@ -97,7 +107,12 @@ public class Home
         return viewDateIsYesterday() || viewDateIsToday();
     }
 
-    private void resetViews() {
+    private void hardResetViews() {
+        doCancelDailyStats();
+        softResetViews();
+    }
+
+    private void softResetViews() {
         findViewById(R.id.submit_pickItemsBelow).setVisibility(View.GONE);
         findViewById(R.id.cancelSubmitDailyStats).setVisibility(View.GONE);
         findViewById(R.id.footerButton_addStats).setVisibility(View.GONE);
@@ -173,7 +188,7 @@ public class Home
 
     public void cancelDailyStats(View v) {
         doCancelDailyStats();
-        initHomePage();
+        initHomePage(false);
     }
 
     private void doCancelDailyStats() {
@@ -271,7 +286,7 @@ public class Home
 
                     selectedStatsLl.addView(row);
                     Home.this.selectedStats.add(stat);
-                    initHomePage();
+                    initHomePage(false);
                 }
             }
         };
@@ -353,7 +368,7 @@ public class Home
 
     public void viewModeAddStats(View v) {
         this.viewMode = ViewMode.AddStat;
-        initHomePage();
+        initHomePage(false);
     }
 
     public void editOrRemove(View v) {

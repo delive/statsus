@@ -1,9 +1,10 @@
-package com.statsus.core;
+package com.statsus.core.utility;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
+import com.statsus.core.Home;
 import com.statsus.core.metadata.Category;
 import com.statsus.core.metadata.Stat;
 import com.statsus.core.persistence.LocalPersistenceManager;

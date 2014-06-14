@@ -15,7 +15,7 @@
         android:paddingTop="10dp"
         android:background="#151515"
         android:paddingBottom="@dimen/activity_vertical_margin"
-        tools:context="com.example.statsusv1.statsusv1.Statsus">
+        tools:context="com.statsus.core.EditOrRemoveStat">
 
 
         <ImageView
@@ -90,7 +90,7 @@
                         android:layout_below="@+id/menuBar"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
-                        android:id="@+id/relativeLayout">
+                        android:id="@+id/date_bar">
 
                     <ImageView
                             android:layout_width="fill_parent"
@@ -145,7 +145,7 @@
             android:layout_height="wrap_content"
             android:text="What would you like to keep track of?"
             android:id="@+id/keepTrack"
-            android:layout_below="@+id/relativeLayout"
+            android:layout_below="@+id/date_bar"
             android:layout_marginLeft = "8dip"
             android:layout_marginRight = "8dip"
             android:layout_marginTop = "15dip"

@@ -4,10 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.statsus.core.persistence.LocalPersistenceManager;
+import com.statsus.core.utility.OnSwipeTouchListener;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,34 +13,36 @@ import android.widget.TextView;
  * @author john.wright
  * @since 21
  */
-public class ActivityWithBanner
-        extends Activity {
+public class ActivityWithDateSlider
+        extends ActivityWithMainMenu {
     public static final int DAY_INCRMENT = (1000 * 60 * 60 * 24);
     public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MMMM dd yyyy");
 
     protected Date date;
     protected Date realDate;
+    boolean swipeInitialized;
 
-    public void myDay(View v) {
-        final Intent intent = new Intent(v.getContext(), Home.class);
-        Util.setIntentFlagNoHistory(intent);
-        startActivity(intent);
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (!this.swipeInitialized) {
+            findViewById(R.id.date_bar).setOnTouchListener(new OnSwipeTouchListener(this) {
+                @Override
+                public void onSwipeLeft() {
+                    nextDay(null);
+                }
+
+                @Override
+                public void onSwipeRight() {
+                    previousDay(null);
+                }
+            });
+            this.swipeInitialized = true;
+        }
     }
 
-    public void myStats(View v) {
-        final Intent intent = new Intent(v.getContext(), MyStats.class);
-        Util.setIntentFlagNoHistory(intent);
-        startActivity(intent);
-      }
-
-    public void myFriends(View v) {
-//        final Intent intent = new Intent(v.getContext(), Friends.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//        startActivity(intent);
-        LocalPersistenceManager.truncateAll(getApplicationContext());
-    }
-
-    protected void initHomePage() {
+    protected void initHomePage(final boolean hardReset) {
         checkAndSetDate();
     }
 
@@ -63,13 +63,15 @@ public class ActivityWithBanner
     }
 
     public void nextDay(View v) {
-        this.date = new Date(this.date.getTime() + DAY_INCRMENT);
-        initHomePage();
+        if (!viewDateIsToday()) {
+            this.date = new Date(this.date.getTime() + DAY_INCRMENT);
+            initHomePage(true);
+        }
     }
 
     public void previousDay(View v) {
         this.date = new Date(this.date.getTime() - DAY_INCRMENT);
-        initHomePage();
+        initHomePage(true);
     }
 
     public boolean viewDateIsYesterday() {

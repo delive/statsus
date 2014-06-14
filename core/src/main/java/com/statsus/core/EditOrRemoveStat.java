@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.statsus.core.utility.Util;
 import com.statsus.core.metadata.Stat;
 import com.statsus.core.persistence.LocalPersistenceManager;
 
@@ -21,7 +22,7 @@ import android.widget.LinearLayout;
  * @since 21
  */
 public class EditOrRemoveStat
-        extends ActivityWithBanner {
+        extends ActivityWithDateSlider {
 
     final Set<Stat> statsToRemove = new HashSet<Stat>();
 
