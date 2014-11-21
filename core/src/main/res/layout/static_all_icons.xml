@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="@color/bgcolor1"
+    android:layout_height="fill_parent">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="10dp"
+        android:background="@color/bgcolor1"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.example.statsusv1.statsusv1.Statsus">
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:contentDescription="@string/app_name"
+            android:layout_height="wrap_content"
+            android:id="@+id/logo_image"
+            android:adjustViewBounds="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginTop = "6dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/logo_statsus" />
+
+        <ImageButton
+            android:id="@+id/settings_button"
+            android:contentDescription="@string/settings_button"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop = "2dip"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/icon_settings"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            style="@style/settings_button" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_marginTop = "10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_height="wrap_content"
+            android:background="@color/bgcolor2"
+            android:layout_below="@+id/settings_button"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/top_navigation_container">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="Jump to a Specific Icons Category"
+                android:id="@+id/bt_friends"
+                android:layout_marginLeft = "8dip"
+                android:layout_marginRight = "8dip"
+                style="@style/gray_button" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sports"
+            android:id="@+id/sports_text"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop = "15dip"
+            android:textColor="#FFF"
+            android:layout_below="@+id/top_navigation_container"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sports_text"
+            android:id="@+id/sports_icons">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_badminton"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_baseball"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_basketball"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_biking"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_boating"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_bowling"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_bowshooting"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_boxing"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_running"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_climbing"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_criquet"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_diving"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_fencing"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_fishing"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_football"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_golf"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_hockey"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_karate"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_lacrosse"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_lifting"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_pingpong"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_racing"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_skateboarding"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_rollerblading"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_horse_riding"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_skating"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_skiing"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_snowboarding"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_soccer"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_surfing"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_swimming"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_target_practice"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_tennis"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_volley"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_windsurf"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_sports_horse_riding"
+                    android:background="@color/sub_color_2"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Romance"
+            android:id="@+id/romance_text"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop = "15dip"
+            android:textColor="#FFF"
+            android:layout_below="@+id/sports_icons"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/romance_text"
+            android:id="@+id/romance_icons">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_romance_couple"
+                    android:background="@color/sub_color_5"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_romance_date_1"
+                    android:background="@color/sub_color_5"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_romance_date_2"
+                    android:background="@color/sub_color_5"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_romance_flowers"
+                    android:background="@color/sub_color_5"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_romance_gift"
+                    android:background="@color/sub_color_5"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_romance_heartbreak"
+                    android:background="@color/sub_color_5"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_romance_internet_dating"
+                    android:background="@color/sub_color_5"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_romance_lovestruck"
+                    android:background="@color/sub_color_5"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_romance_sex"
+                    android:background="@color/sub_color_5"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_romance_wedding"
+                    android:background="@color/sub_color_5"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:alpha="0.3"
+                    android:background="@color/sub_color_5"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:alpha="0.3"
+                    android:background="@color/sub_color_5"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entertainment"
+            android:id="@+id/entertainment_text"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop = "15dip"
+            android:textColor="#FFF"
+            android:layout_below="@+id/romance_icons"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/entertainment_text"
+            android:id="@+id/entertainment_icons">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_chess"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_beach"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_book"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_cards"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_cinema"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_cocktail"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_concert"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_concert_2"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_dice"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_dj"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_laptop"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_music"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_music_2"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_painting"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_party"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_photography"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_singing"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_stage"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_theater"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_tv"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_videogames"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_wii"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_entertainment_xbox"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:alpha="0.3"
+                    android:background="@color/sub_color_1"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mood"
+            android:id="@+id/mood_text"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop = "15dip"
+            android:textColor="#FFF"
+            android:layout_below="@+id/entertainment_icons"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mood_text"
+            android:id="@+id/occupation_icons">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="6dp">
+
+            <ImageButton
+                android:contentDescription="@string/item_icon"
+                android:src="@drawable/uicon_mood_angry"
+                android:background="@color/sub_color_4"
+                style="@style/icon_gallery_entry" />
+
+            <ImageButton
+                android:contentDescription="@string/item_icon"
+                android:src="@drawable/uicon_mood_baffled"
+                android:background="@color/sub_color_4"
+                style="@style/icon_gallery_entry" />
+
+            <ImageButton
+                android:contentDescription="@string/item_icon"
+                android:src="@drawable/uicon_mood_cool"
+                android:background="@color/sub_color_4"
+                style="@style/icon_gallery_entry" />
+
+            <ImageButton
+                android:contentDescription="@string/item_icon"
+                android:src="@drawable/uicon_mood_crying"
+                android:background="@color/sub_color_4"
+                style="@style/icon_gallery_entry" />
+
+            <ImageButton
+                android:contentDescription="@string/item_icon"
+                android:src="@drawable/uicon_mood_evil"
+                android:background="@color/sub_color_4"
+                style="@style/icon_gallery_entry" />
+
+            <ImageButton
+                android:contentDescription="@string/item_icon"
+                android:src="@drawable/uicon_mood_excited"
+                android:background="@color/sub_color_4"
+                style="@style/icon_gallery_entry" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_mood_frustrated"
+                    android:background="@color/sub_color_4"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_mood_happy"
+                    android:background="@color/sub_color_4"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_mood_inlove"
+                    android:background="@color/sub_color_4"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_mood_joker"
+                    android:background="@color/sub_color_4"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_mood_sleepy"
+                    android:background="@color/sub_color_4"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_mood_speechless"
+                    android:background="@color/sub_color_4"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp">
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicon_mood_upset"
+                    android:background="@color/sub_color_4"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:background="@color/sub_color_4"
+                    android:alpha="0.3"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:background="@color/sub_color_4"
+                    android:alpha="0.3"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:background="@color/sub_color_4"
+                    android:alpha="0.3"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:background="@color/sub_color_4"
+                    android:alpha="0.3"
+                    style="@style/icon_gallery_entry" />
+
+                <ImageButton
+                    android:contentDescription="@string/item_icon"
+                    android:background="@color/sub_color_4"
+                    android:alpha="0.3"
+                    style="@style/icon_gallery_entry" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+
+</ScrollView>
