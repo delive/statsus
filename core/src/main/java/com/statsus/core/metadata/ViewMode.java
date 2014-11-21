@@ -7,5 +7,6 @@ package com.statsus.core.metadata;
 public enum ViewMode {
     AddStat,
     ViewDay,
-    Default, StatSummary
+    Default,
+    StatSummary
 }

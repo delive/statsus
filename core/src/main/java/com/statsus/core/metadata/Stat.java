@@ -3,14 +3,22 @@ package com.statsus.core.metadata;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import com.statsus.core.Home;
 import com.statsus.core.R;
+import com.statsus.core.data.StatData;
+import com.statsus.core.persistence.DatabaseSchema.StatContentSql;
+import com.statsus.core.persistence.LocalPersistenceManager;
 
 import android.app.AlertDialog;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -122,5 +130,26 @@ public enum Stat {
             }
         }
         throw new IllegalArgumentException("no stat named " + statString);
+    }
+
+    public static StatData queryStatDataAfterDate(final int sid, final Date viewDate, final Context context) {
+        final SQLiteDatabase db = LocalPersistenceManager.getReadableDb(context);
+
+        final StatData statData = new StatData();
+
+        final Cursor c =
+                db.rawQuery(StatContentSql.SQL_STAT_DATA_AFTER_DATE, new String[]{String.valueOf(sid), Home.DATE_FORMAT
+                        .format(viewDate)});
+        try {
+            if (!c.moveToFirst()) {
+                // maybe throw an error instead? seems like bad news
+                return StatData.EMPTY;
+            }
+            statData.setTotal(c.getInt(c.getColumnIndexOrThrow(StatContentSql.COLUMN_TOTAL)));
+            return statData;
+        }
+        finally {
+            c.close();
+        }
     }
 }

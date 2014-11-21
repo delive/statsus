@@ -23,6 +23,10 @@ public class DatabaseSchema {
         public static final String COLUMN_NAME_VAL = "val";
         public static final String COLUMN_NAME_NOTE = "note";
 
+        // custom cols used for aggregates
+        public static final String COLUMN_TOTAL = "total";
+
+
         // primary key sid,uid,date
 
         public static final String SQL_CREATE_TABLE =
@@ -40,6 +44,11 @@ public class DatabaseSchema {
 
         public static final String SQL_DELETE_TABLE =
                 "DROP TABLE IF EXISTS " + StatContentSql.TABLE_NAME;
+
+        public static final String SQL_STAT_DATA_AFTER_DATE = "select count(*) as " + COLUMN_TOTAL + " from " + TABLE_NAME + " where " +
+                COLUMN_NAME_STAT_ID + " = ? AND " +
+                COLUMN_NAME_DATE + " > ?";
+
     }
 
     public static abstract class StatCategorySql

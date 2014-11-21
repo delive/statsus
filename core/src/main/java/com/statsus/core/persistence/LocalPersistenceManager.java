@@ -212,7 +212,7 @@ public class LocalPersistenceManager {
         db.close();
     }
 
-    private static SQLiteDatabase getReadableDb(final Context context) {
+    public static SQLiteDatabase getReadableDb(final Context context) {
         final LocalMysqlHelper dbHelper = new LocalMysqlHelper(context);
         final SQLiteDatabase db = dbHelper.getReadableDatabase();
         if (db == null) {

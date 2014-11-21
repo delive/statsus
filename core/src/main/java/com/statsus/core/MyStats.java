@@ -1,39 +1,58 @@
 package com.statsus.core;
 
-import java.util.List;
+import java.util.Date;
 
-import com.statsus.core.persistence.LocalPersistenceManager;
-import com.statsus.core.persistence.LocalPersistenceManager.SqlStatContainer;
+import com.statsus.core.data.StatData;
+import com.statsus.core.metadata.Stat;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 /**
- *
  * @author john.wright
  * @since May 20 2014
  */
-public class MyStats extends Activity {
+public class MyStats
+        extends ActivityWithMainMenu {
+    private Date viewDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_stats);
+        setContentView(R.layout.stats_single_item);
+
+        setViewDate();
 
         initMyStatsContent();
     }
 
+    private void setViewDate() {
+        // TODO properly handle beginning of a month date,, and other date ranges:
+        final long lastMonthDateTime = new Date().getTime() - Home.DAY_INCRMENT * 30;
+        this.viewDate = new Date(lastMonthDateTime);
+    }
+
     private void initMyStatsContent() {
-        //TODO just test text to test persistence for now
-        final TextView textView = (TextView) findViewById(R.id.content);
+        final Stat stat = Stat.values()[0];
 
-        final List<SqlStatContainer> stats = LocalPersistenceManager.getAllStats(getApplicationContext());
+        final Button itemText = (Button) findViewById(R.id.item_text);
+        final ImageButton itemButton = (ImageButton) findViewById(R.id.item_icon_1);
 
-        final StringBuilder sb = new StringBuilder();
-        for (final SqlStatContainer stat : stats) {
-            sb.append(stat).append("\n");
-        }
-        textView.setText(sb.toString());
+        stat.setTextProperties(itemText);
+        stat.setStatImageProperties(itemButton);
+
+        final StatData statData = Stat.queryStatDataAfterDate(stat.getSid(), this.viewDate, getApplicationContext());
+
+        setTotalCount(statData);
+    }
+
+    private void setTotalCount(final StatData statData) {
+        final int totalCount = statData.getTotalCount();
+        final String qualifier = totalCount > 1 ? " days" : " day";
+
+        final TextView statCountView = (TextView) findViewById(R.id.stat_count);
+        statCountView.setText(totalCount + qualifier);
     }
 }

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="@color/bgcolor1"
+    android:layout_height="fill_parent">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="10dp"
+        android:background="@color/bgcolor1"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.statsus.core.MyStats">
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:contentDescription="@string/app_name"
+            android:layout_height="wrap_content"
+            android:id="@+id/logo_image"
+            android:adjustViewBounds="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft = "8dip"
+            android:layout_marginTop = "6dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/logo_statsus" />
+
+        <ImageButton
+            android:id="@+id/settings_button"
+            android:contentDescription="@string/settings_button"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight = "8dip"
+            android:layout_marginTop = "2dip"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/icon_settings"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            style="@style/settings_button" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_marginTop = "10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_height="wrap_content"
+            android:background="@color/bgcolor2"
+            android:layout_below="@+id/settings_button"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/top_navigation_container">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="@string/bt_my_day"
+                android:onClick="myDay"
+                android:id="@+id/bt_my_day"
+                android:layout_marginLeft = "8dip"
+                style="@style/gray_button" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="@string/bt_stats"
+                android:id="@+id/bt_stats"
+                android:onClick="myStats"
+                android:layout_marginLeft = "8dip"
+                android:layout_marginRight = "8dip"
+                style="@style/blue_button" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="@string/bt_friends"
+                android:id="@+id/bt_friends"
+                android:layout_marginRight = "8dip"
+                style="@style/gray_button" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_below="@+id/top_navigation_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop = "15dip"
+            android:id="@+id/title">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currently_viewing_stats_for"
+                android:layout_marginLeft = "8dip"
+                android:layout_marginRight = "8dip"
+                android:textColor="@color/main_color_1"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+
+        <!-- 1 row of 2 buttons with text and icon starts -->
+        <LinearLayout
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:layout_below="@+id/title"
+            android:layout_width="fill_parent"
+            android:layout_marginTop = "15dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/single_items">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft = "8dip"
+                android:layout_marginRight = "4dip">
+
+                <ImageButton
+                    android:id="@+id/item_icon_1"
+                    android:contentDescription="@string/item_icon"
+                    android:src="@drawable/uicons_smiley"
+                    android:background="@color/sub_color_5"
+                    style="@style/colored_squared" />
+
+                <Button
+                    style="@style/uicon_text"
+                    android:text="@string/item_text"
+                    android:textColor="@color/sub_color_5"
+                    android:id="@+id/item_text" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft = "4dip"
+                android:layout_marginRight = "4dip"
+                android:id="@+id/linearLayout">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:text="@string/change_item"
+                    android:layout_marginLeft = "4dip"
+                    android:layout_marginRight = "4dip"
+                    android:id="@+id/change_item"
+                    android:onClick="myStats"
+                    style="@style/gray_button" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 1 row of 2 buttons with text and icon ends -->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_below="@+id/single_items"
+            android:layout_width="fill_parent"
+            android:layout_marginTop = "10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_height="wrap_content"
+            android:background="@color/bgcolor2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/time_period">
+
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="@string/week"
+                android:id="@+id/week"
+                android:layout_marginLeft = "8dip"
+                style="@style/gray_button" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="@string/month"
+                android:id="@+id/month"
+                android:layout_marginLeft = "8dip"
+                android:layout_marginRight = "8dip"
+                style="@style/blue_button" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="@string/year"
+                android:id="@+id/year"
+                android:layout_marginRight = "8dip"
+                style="@style/gray_button" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="@string/custom"
+                android:id="@+id/custom"
+                android:layout_marginRight = "8dip"
+                style="@style/gray_button" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_below="@+id/time_period"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop = "15dip"
+            android:id="@+id/text_stats">
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:text="Used during this time period:" />
+                <TextView
+                    style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
+                    android:id="@+id/stat_count" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/stats_divider" > </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:text="Most # of days used in a row:" />
+                <TextView
+                    style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
+                    android:text="4 days" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/stats_divider" > </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:text="Longest break between uses:" />
+                <TextView
+                    style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
+                    android:text="2 days" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/stats_divider" > </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:text="Percentage of the days used:" />
+                <TextView
+                    style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
+                    android:text="50%" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.50"
+                    android:layout_height="10dp"
+                    android:background="@color/sub_color_5"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.50"
+                    android:layout_height="10dp"
+                    android:background="#10FFFFFF"/>
+            </LinearLayout>
+
+            <LinearLayout style="@style/stats_divider" > </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:text="Average Numeric Value:" />
+                <TextView
+                    style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
+                    android:text="5.2" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/stats_divider" > </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:text="Total Numeric Value:" />
+                <TextView
+                    style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
+                    android:text="85" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/stats_divider" > </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:text="Highest Numeric Value:" />
+                <TextView
+                    style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
+                    android:text="7" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/stats_divider" > </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:text="Lowest Numeric Value:" />
+                <TextView
+                    style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
+                    android:text="2" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/stats_divider" > </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/stats_label"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:text="Number of Notes Added:" />
+                <TextView
+                    style="@style/stats_value"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="right"
+                    android:text="5" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/stats_divider" > </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="fill_parent"
+                    android:text="View Item on Calendar"
+                    android:layout_marginLeft = "8dip"
+                    android:layout_marginRight = "8dip"
+                    android:id="@+id/calendar_view"
+                    android:onClick="myStats"
+                    style="@style/gray_button" />
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+</ScrollView>

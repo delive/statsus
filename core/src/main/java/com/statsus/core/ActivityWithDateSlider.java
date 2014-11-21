@@ -15,10 +15,12 @@ import android.widget.TextView;
  */
 public class ActivityWithDateSlider
         extends ActivityWithMainMenu {
-    public static final int DAY_INCRMENT = (1000 * 60 * 60 * 24);
+    public static final long DAY_INCRMENT = (1000 * 60 * 60 * 24);
     public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MMMM dd yyyy");
 
+    // date we are currently viewing
     protected Date date;
+    // actual date
     protected Date realDate;
     boolean swipeInitialized;
 
